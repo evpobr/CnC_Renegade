@@ -77,11 +77,11 @@ SoundStreamHandleClass::Initialize (SoundBufferClass *buffer)
 		//
 		//	Create a stream from the sample handle
 		//
-		StreamHandle = ::AIL_open_stream_by_sample (WWAudioClass::Get_Instance ()->Get_2D_Driver (),
-								SampleHandle, buffer->Get_Filename (), 0);
+		/*StreamHandle = ::AIL_open_stream_by_sample (WWAudioClass::Get_Instance ()->Get_2D_Driver (),
+								SampleHandle, buffer->Get_Filename (), 0);*/
 
-		/*StreamHandle = ::AIL_open_stream (WWAudioClass::Get_Instance ()->Get_2D_Driver (),
-								buffer->Get_Filename (), 0);*/
+		StreamHandle = ::AIL_open_stream (WWAudioClass::Get_Instance ()->Get_2D_Driver (),
+								buffer->Get_Filename (), 0);
 	}
 
 	return ;

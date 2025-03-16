@@ -4,13 +4,11 @@
 
 # Dependencies
 [Ll]ibs/
-Miles6/
 Bink/
 Lightscape/
 NvDXTLib/
 Umbra/
 GameSpy/
-DirectX/
 
 # Output build folders
 [Rr]elease*

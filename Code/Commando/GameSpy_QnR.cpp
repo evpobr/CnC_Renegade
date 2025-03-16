@@ -34,8 +34,10 @@
  * Functions:                                                                                  *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+#ifdef USE_GAMESPY
 #include <Gamespy\gs_patch_usage.h>
 #include <Gamespy\gcdkeyserver.h>
+#endif
 #include "specialbuilds.h"
 #include "dlgcncteaminfo.h"
 #include "resource.h"
@@ -170,6 +172,7 @@ CGameSpyQnR::~CGameSpyQnR()
 }
 
 void CGameSpyQnR::LaunchArcade(void) {
+#ifdef USE_GAMESPY
 	char *akey = "Software\\GameSpy\\GameSpy Arcade";
 	BOOL launched = FALSE;
 	HKEY key = NULL;
@@ -221,9 +224,10 @@ void CGameSpyQnR::LaunchArcade(void) {
 
 		ShellExecute (NULL, "open", url, NULL, NULL, SW_SHOW);
 	}
+#endif
 }
 void CGameSpyQnR::Shutdown(void) {
-
+#ifdef USE_GAMESPY
 #ifndef BETACLIENT
 	if (m_GSInit) {
 		/*
@@ -236,10 +240,11 @@ void CGameSpyQnR::Shutdown(void) {
 		m_GSEnabled = m_GSInit = false;
 	}
 #endif
+#endif
 }
 
 void CGameSpyQnR::TrackUsage(void) {
-
+#ifdef USE_GAMESPY
 #ifndef WWDEBUG
 	char filename[MAX_PATH];
 	GetModuleFileName(NULL, filename, sizeof(filename));
@@ -254,9 +259,11 @@ void CGameSpyQnR::TrackUsage(void) {
 	// Send off usage Tracking info to GameSpy
 	ptTrackUsage(0, prodid, b.Peek_Buffer(), (cUserOptions::Sku.Get()&0xff)+438, false); 
 #endif // WWDEBUG
+#endif
 }
 
 void CGameSpyQnR::Init(void) {
+#ifdef USE_GAMESPY
 
 #ifndef BETACLIENT
 
@@ -293,6 +300,7 @@ void CGameSpyQnR::Init(void) {
 		m_GSInit = TRUE;
 	}
 #endif
+#endif
 }
 
 /*******
@@ -312,6 +320,7 @@ Simulates a main game loop
 *****************/
 void CGameSpyQnR::Think()
 {
+#ifdef USE_GAMESPY
 	static DWORD stime = (DWORD)(0 - BANLIST_RELOAD_TIME);
 	static DWORD ttime = 0;
 
@@ -333,6 +342,7 @@ void CGameSpyQnR::Think()
 		gcd_think();
 	}
 #endif
+#endif
 }
 
 /*************
@@ -345,6 +355,7 @@ includes the following keys:
 *************/
 void CGameSpyQnR::basic_callback(char *outbuf, int maxlen)
 {
+#ifdef USE_GAMESPY
 
 	WWDEBUG_SAY(("-->GS_QnR -- Basic callback\n"));
 	WWASSERT(!CombatManager::Is_Loading_Level());
@@ -366,6 +377,7 @@ void CGameSpyQnR::basic_callback(char *outbuf, int maxlen)
 	WWDEBUG_SAY(("<--GS_QnR -- Basic callback\n"));
 
 //	printf("Basic callback, sent: %s\n\n",outbuf);
+#endif
 }
 
 /************
@@ -382,6 +394,7 @@ including the following keys:
 ************/
 void CGameSpyQnR::info_callback(char *outbuf, int maxlen)
 {
+#ifdef USE_GAMESPY
 
 	WWDEBUG_SAY(("-->GS_QnR -- Info callback\n"));
 	WWASSERT(!CombatManager::Is_Loading_Level());
@@ -447,6 +460,7 @@ void CGameSpyQnR::info_callback(char *outbuf, int maxlen)
 	OutputDebugString(tstr.Peek_Buffer());
 #endif
 	WWDEBUG_SAY(("<--GS_QnR -- Info callback\n"));
+#endif
 
 }
 
@@ -463,6 +477,7 @@ The following rules are included:
 ****************/
 void CGameSpyQnR::rules_callback(char *outbuf, int maxlen)
 {
+#ifdef USE_GAMESPY
 	static StringClass b;
 	WWDEBUG_SAY(("-->GS_QnR -- Rules callback\n"));
 	WWASSERT(!CombatManager::Is_Loading_Level());
@@ -551,12 +566,14 @@ void CGameSpyQnR::rules_callback(char *outbuf, int maxlen)
 #endif
 	WWDEBUG_SAY(("<--GS_QnR -- Rules callback\n"));
 
+#endif
 }
 
 BOOL CGameSpyQnR::Parse_HeartBeat_List(const char *list) {
 
 	BOOL master_added = false;
 
+#ifdef USE_GAMESPY
 	char *str = new char[strlen(list)+1];
 	strcpy(str, list);
 
@@ -589,6 +606,7 @@ BOOL CGameSpyQnR::Parse_HeartBeat_List(const char *list) {
 	}
 
 	delete [] str;
+#endif
 
 	if (!master_added) {
 		ConsoleBox.Print("Error processing HeartBeat List: <%s>\n", list);
@@ -600,7 +618,7 @@ BOOL CGameSpyQnR::Parse_HeartBeat_List(const char *list) {
 }
 
 BOOL CGameSpyQnR::Append_InfoKey_Pair(char *outbuf, int maxlen, const char *key, const char *value) {
-
+#ifdef USE_GAMESPY
 	WWASSERT(value);
 	WWASSERT(outbuf);
 	WWASSERT(key);
@@ -621,13 +639,20 @@ BOOL CGameSpyQnR::Append_InfoKey_Pair(char *outbuf, int maxlen, const char *key,
 	delete [] s;
 
 	return TRUE;
+#else
+	return FALSE;
+#endif
 }
 
 BOOL CGameSpyQnR::Append_InfoKey_Pair(char *outbuf, int maxlen, const char *key, const WideStringClass &value) {
+#ifdef USE_GAMESPY
 	static StringClass text;
 
 	value.Convert_To(text);
 	return Append_InfoKey_Pair(outbuf, maxlen, key, text.Peek_Buffer());
+#else
+	return FALSE;
+#endif
 }
 
 BOOL CGameSpyQnR::Append_InfoKey_Pair(char *outbuf, int maxlen, const char *key, const StringClass &value) {
@@ -651,6 +676,7 @@ The following keys are included for each player:
 ***************/
 void CGameSpyQnR::players_callback(char *outbuf, int maxlen)
 {
+#ifdef USE_GAMESPY
 
 	// Send the minimum for now to reduce Bandwidth usage.
 	outbuf[0] = 0;
@@ -757,6 +783,7 @@ void CGameSpyQnR::players_callback(char *outbuf, int maxlen)
 
 	WWDEBUG_SAY(("<--GS_QnR -- Players callback\n"));
 	return;
+#endif
 }
 /************
 We'll actually start up two completely seperate "game servers"
