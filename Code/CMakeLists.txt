@@ -1,0 +1,8 @@
+add_subdirectory(wwdebug)
+add_subdirectory(wwsaveload)
+add_subdirectory(wwbitpack)
+add_subdirectory(WWMath)
+add_subdirectory(wwutil)
+add_subdirectory(wwlib)
+add_subdirectory(BandTest)
+add_subdirectory(Scripts)

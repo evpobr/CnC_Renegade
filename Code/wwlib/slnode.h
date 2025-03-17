@@ -81,6 +81,7 @@ class	GenericSLNode : public AutoPoolClass<GenericSLNode, 256>
 	private:
 		GenericSLNode(void) {};
 
+	protected:
 		void		*NodeNext;			//	Next Node in the list chain
 		void		*NodeData;			//	Current Node in the list chain
 };

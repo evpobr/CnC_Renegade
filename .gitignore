@@ -51,3 +51,7 @@ GMax_Hybrid/
 wwconfig_ids.rpt
 wwconfig_ids.h
 IDL_*.loc
+
+# CMake
+
+*[Bb]uild*/

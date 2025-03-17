@@ -46,6 +46,7 @@
 #include <mmsystem.h>
 #pragma warning(default:4201)
 
+#include <cmath>
 #include <malloc.h>
 #include <stdio.h>
 #include <conio.h>
@@ -782,9 +783,9 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 	** If the bandwidth in the registry is close to what we just calculated then use the old downstream calculation from the
 	** registry.
 	*/
-	unsigned long downstream_bandwidth = upstream_bandwidth;
-	int old_band = Get_Registry_Int("Up", 0);
-	unsigned long diff = abs(upstream_bandwidth - old_band);
+	long long downstream_bandwidth = upstream_bandwidth;
+	long long old_band = Get_Registry_Int("Up", 0);
+	long long diff = std::abs(upstream_bandwidth - old_band);
 	bool calc_down = true;
 	if (diff < upstream_bandwidth / 10) {
 		downstream_bandwidth = Get_Registry_Int("Down", upstream_bandwidth);
@@ -1191,7 +1192,7 @@ void Ping_Profile(SOCKADDR_IN *router_addr, unsigned long my_ip)
 	/*
 	** Draw the pings onto the graph.
 	*/
-	for (i=0 ; i<ping_number ; i++) {
+	for (int i=0 ; i<ping_number ; i++) {
 		float ping = ping_averages[i];
 		int position = (int)((ping - min_ping) * scale);
 
@@ -1202,7 +1203,7 @@ void Ping_Profile(SOCKADDR_IN *router_addr, unsigned long my_ip)
 	/*
 	** Dump it out.
 	*/
-	for (i=0 ; i<30 ; i++) {
+	for (int i=0 ; i<30 ; i++) {
 		DebugString(temp_graph[i]);
 		cprintf(temp_graph[i]);
 	}
