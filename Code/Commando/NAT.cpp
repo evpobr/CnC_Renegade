@@ -1063,6 +1063,7 @@ FirewallHelperClass::FirewallBehaviorType FirewallHelperClass::Detect_Firewall_B
 		** case.
 		*/
 		bool port_open_failed = false;
+		int i;
 		for (i=0 ; i<NUM_TEST_PORTS ; i++) {
 			source_ports[i] = Get_Next_Temporary_Source_Port(i);
 			port_sockets[i] = new SocketHandlerClass;

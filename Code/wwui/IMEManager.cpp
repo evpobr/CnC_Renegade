@@ -38,6 +38,7 @@
 #include "WWDebug.h"
 #include <locale.h>
 #include <mbctype.h>
+#include <mbstring.h>
 
 #if defined(_MSC_VER)
 #pragma warning(push, 3)
@@ -837,7 +838,7 @@ HKL IMEManager::InputLanguageChangeRequest(HKL hkl)
 		std::vector<HKL> layoutList(numLayouts);
 		layoutList.resize(numLayouts);
 
-		numLayouts = GetKeyboardLayoutList(numLayouts, layoutList.begin());
+		numLayouts = GetKeyboardLayoutList(numLayouts, layoutList.data());
 
 		// Find the position in the list of the layout which has been requested.
 		std::vector<HKL>::iterator iter = std::find(layoutList.begin(), layoutList.end(), hkl);

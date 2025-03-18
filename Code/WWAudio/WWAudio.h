@@ -607,34 +607,34 @@ private:
 	//////////////////////////////////////////////////////////////////////
 	//	Private data types
 	//////////////////////////////////////////////////////////////////////
-	typedef struct _CACHE_ENTRY_STRUCT
+	struct CACHE_ENTRY_STRUCT
 	{
 		char *					string_id;
 		SoundBufferClass *	buffer;
 
-		_CACHE_ENTRY_STRUCT (void)
+		CACHE_ENTRY_STRUCT (void)
 			: string_id (0), buffer (NULL) {}
 
-		_CACHE_ENTRY_STRUCT &operator= (const _CACHE_ENTRY_STRUCT &src) { string_id = ::strdup (src.string_id); REF_PTR_SET (buffer, src.buffer); return *this; }
-		operator== (const _CACHE_ENTRY_STRUCT &src) { return false; }
-		operator!= (const _CACHE_ENTRY_STRUCT &src) { return true; }
-	} CACHE_ENTRY_STRUCT;
+		CACHE_ENTRY_STRUCT &operator= (const CACHE_ENTRY_STRUCT &src) { string_id = ::strdup (src.string_id); REF_PTR_SET (buffer, src.buffer); return *this; }
+		bool operator== (const CACHE_ENTRY_STRUCT &src) { return false; }
+		bool operator!= (const CACHE_ENTRY_STRUCT &src) { return true; }
+	};
 
 
-	typedef struct _LOGICAL_TYPE_STRUCT
+	struct LOGICAL_TYPE_STRUCT
 	{
 		StringClass				display_name;
 		int						id;
 
-		_LOGICAL_TYPE_STRUCT (void)
+		LOGICAL_TYPE_STRUCT (void)
 			: id (0) {}
 
-		_LOGICAL_TYPE_STRUCT (int _id, LPCTSTR name)
+		LOGICAL_TYPE_STRUCT (int _id, LPCTSTR name)
 			:	display_name (name), id (_id) {}
 
-		operator== (const _LOGICAL_TYPE_STRUCT &src) { return false; }
-		operator!= (const _LOGICAL_TYPE_STRUCT &src) { return true; }
-	} LOGICAL_TYPE_STRUCT;
+		bool operator== (const LOGICAL_TYPE_STRUCT &src) { return false; }
+		bool operator!= (const LOGICAL_TYPE_STRUCT &src) { return true; }
+	};
 
 	//////////////////////////////////////////////////////////////////////
 	//	Private constants

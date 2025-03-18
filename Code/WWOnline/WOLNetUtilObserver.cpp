@@ -235,7 +235,7 @@ STDMETHODIMP NetUtilObserver::OnPing(HRESULT result, int time, unsigned long ip,
 
 	if ((pingIndex >= 0) && ((unsigned)pingIndex < mOuter->mPingRequests.size()))
 		{
-		RawPing* ping = &mOuter->mPingRequests[pingIndex];
+		std::vector<RawPing>::iterator ping = mOuter->mPingRequests.begin() + pingIndex;
 		ping->SetTime(time);
 		ping->SetIPAddress(ip);
 

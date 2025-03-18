@@ -62,7 +62,9 @@
 #include	"msgloop.h"
 
 
+#ifndef ARRAY_SIZE
 #define	ARRAY_SIZE(x)		int(sizeof(x)/sizeof(x[0]))
+#endif
 
 void Stop_Execution (void)
 {

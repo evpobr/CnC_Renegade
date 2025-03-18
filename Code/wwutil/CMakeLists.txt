@@ -6,4 +6,5 @@ add_library(wwutil STATIC
     stackdump.cpp
     stackdump.h
 )
-target_include_directories(wwutil PRIVATE ../wwdebug ../wwlib ../wwmath PUBLIC .)
+target_include_directories(wwutil PUBLIC .)
+target_link_libraries(wwutil PUBLIC wwlib PRIVATE wwmath wwdebug)

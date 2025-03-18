@@ -3580,12 +3580,12 @@ public:
 	virtual	const char * Get_Name( void )	{ return "resolution"; }
 	virtual	const char * Get_Help( void )	{ return "RESOLUTION [+|-]"; }
 	virtual	void Activate( const char * input ) {
-		int w,h,bits;
+		int w,h,bits,i;
 		bool windowed;
 		WW3D::Get_Device_Resolution(w,h,bits,windowed);
 		const RenderDeviceDescClass& desc=WW3D::Get_Render_Device_Desc();
 		const DynamicVectorClass<ResolutionDescClass> & resos=desc.Enumerate_Resolutions();
-		for (int i=0;i<resos.Count();++i) {
+		for (i=0;i<resos.Count();++i) {
 			if (resos[i].Width==w && resos[i].Height==h && resos[i].BitDepth==bits) {
 				break;
 			}
@@ -4148,7 +4148,8 @@ public:
 			if (!input || !(*input)) return;
 			cPlayer *player = NULL;
 
-			for (SLNode<cPlayer> *player_node = cPlayerManager::Get_Player_Object_List ()->Head ()
+			SLNode<cPlayer> *player_node;
+			for (player_node = cPlayerManager::Get_Player_Object_List ()->Head ()
 				; player_node != NULL; player_node = player_node->Next ()) {
 
 				player = player_node->Data ();

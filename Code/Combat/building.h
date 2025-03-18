@@ -86,13 +86,13 @@ namespace BuildingConstants
 		TYPE_COUNT
 	} BuildingType;
 
-	typedef enum
+	enum LegacyBuildingTeam
 	{
 		LEGACY_TEAM_GDI						= 0,
 		LEGACY_TEAM_NOD,
-	} LegacyBuildingTeam;
+	};
 
-	typedef enum
+	enum
 	{
 		BASE_COUNT = 2,
 	};

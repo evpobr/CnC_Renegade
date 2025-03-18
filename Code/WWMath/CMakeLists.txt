@@ -80,4 +80,5 @@ add_library(wwmath STATIC
     wwmath.h
     wwmathids.h
 )
-target_include_directories(wwmath PRIVATE ../wwdebug ../wwlib ../wwsaveload PUBLIC .)
+target_include_directories(wwmath PUBLIC .)
+target_link_libraries(wwmath PUBLIC wwlib wwsaveload)

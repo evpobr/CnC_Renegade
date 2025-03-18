@@ -266,5 +266,6 @@ add_library(wwlib STATIC
     xsurface.cpp
     xsurface.h
 )
-target_include_directories(wwlib PRIVATE ../wwdebug PUBLIC .)
+target_include_directories(wwlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_definitions(wwlib PRIVATE WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_WARNINGS STDC_HEADERS REL_ALLOC REGEX_MALLOC)
+target_link_libraries(wwlib PUBLIC wwdebug PRIVATE version)

@@ -8,4 +8,4 @@ add_library(wwdebug STATIC
     wwprofile.h
 )
 target_include_directories(wwdebug PRIVATE ../wwlib PUBLIC .)
-target_compile_definitions(wwdebug PRIVATE WIN32_LEAN_AND_MEAN)
+target_compile_definitions(wwdebug PRIVATE WIN32_LEAN_AND_MEAN _CRT_SECURE_NO_WARNINGS)

@@ -92,22 +92,21 @@ static const float MIN_AUDIENCE_DIST	= 4.0F;
 //	ActiveConversationClass
 //
 ////////////////////////////////////////////////////////////////
-ActiveConversationClass::ActiveConversationClass (void)	:
-	ID (0),
-	Conversation (NULL),
-	CurrentRemark (-1),
-	NextRemarkTimer (0),
-	State (STATE_INITIALIZING),
-	InitializingTimeLeft (60000),
-	ActionID (0),
-	OratorSpokenBitmask (0),
-	CentralPos (0, 0, 0),
-	Priority (30),
-	MaxDist (0),
-	IsInterruptable (true),
-	CurrentSound (NULL)
+ActiveConversationClass::ActiveConversationClass (void)
 {
-	return ;
+	ID = 0;
+	Conversation = NULL;
+	CurrentRemark = -1;
+	NextRemarkTimer = 0;
+	State = STATE_INITIALIZING;
+	InitializingTimeLeft = 60000;
+	ActionID = 0;
+	OratorSpokenBitmask = 0;
+	CentralPos =  Vector3(0, 0, 0);
+	Priority = 30;
+	MaxDist = 0;
+	IsInterruptable = true;
+	CurrentSound = NULL;
 }
 
 
@@ -684,7 +683,7 @@ ActiveConversationClass::Save (ChunkSaveClass &csave)
 	//
 	//	Save each of the orators
 	//
-	for (index = 0; index < OratorList.Count (); index ++) {
+	for (int index = 0; index < OratorList.Count (); index ++) {
 		csave.Begin_Chunk (CHUNKID_ORATOR);
 			OratorList[index]->Save (csave);
 		csave.End_Chunk ();

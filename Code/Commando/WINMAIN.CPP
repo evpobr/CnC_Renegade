@@ -121,7 +121,8 @@ void Set_Working_Directory(char *old_path, char *new_path);
 int Start_Application( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow );
 void Set_Working_Directory(HINSTANCE hInstance);
 
-#include "packet.h"
+//TODO missing imclude
+// #include "packet.h"
 
 #ifndef _MSC_VER
 long Top_Level_Exception_Filter(EXCEPTION_POINTERS *e_info)
@@ -158,6 +159,7 @@ int PASCAL WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 	**	Setup to track memory heap integrity and check for
 	**	memory leaks. Output is dumped to the debug string console.
 	*/
+#ifdef WWDEBUG
 	if (cDevOptions::CrtDbgEnabled.Is_True()) {
 
 		_CrtSetReportMode(_CRT_WARN, _CRTDBG_MODE_DEBUG);
@@ -165,6 +167,7 @@ int PASCAL WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 		_CrtSetReportMode(_CRT_ASSERT, _CRTDBG_MODE_DEBUG);
 		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	}
+#endif
 
 	/*
 	** Leak test
