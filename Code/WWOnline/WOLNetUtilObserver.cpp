@@ -563,7 +563,7 @@ STDMETHODIMP NetUtilObserver::OnNewNick(HRESULT result, LPCSTR message, LPCSTR n
 		login = LoginInfo::Create(nickname, password, true);
 		}
 		
-	NewLoginInfoEvent event(login, message);
+	NewLoginInfoEvent event(login, WideStringClass(message));
 	mOuter->NotifyObservers(event);
 
 	return S_OK;

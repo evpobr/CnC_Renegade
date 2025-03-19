@@ -3678,7 +3678,7 @@ public:
 		::sscanf(input, "%d %s", &amount, recipient);
 
 		cPlayer * p_me = cNetwork::Get_My_Player_Object();
-		cPlayer * p_recipient = cPlayerManager::Find_Player(recipient);
+		cPlayer * p_recipient = cPlayerManager::Find_Player(WideStringClass(recipient));
 
 		if (p_me != NULL &&
 			 p_recipient != NULL &&
@@ -3739,7 +3739,7 @@ public:
 #endif
 */
 
-		cPlayer * p_player = cPlayerManager::Find_Player(input);
+		cPlayer * p_player = cPlayerManager::Find_Player(WideStringClass(input));
 		if (p_player != NULL) {
 			int id = p_player->Get_Id();
 			cNetwork::Server_Kill_Connection(id);
@@ -4691,7 +4691,7 @@ public:
 	virtual	const char * Get_Name (void)	{return ("whois");}
 	virtual	const char * Get_Help (void)	{return ("WHOIS <player name> - who the heck is this annoying bugger? (server only)\n");}
 	virtual	void Activate (const char *input) {
-		cPlayer * p_player = cPlayerManager::Find_Player(input);
+		cPlayer * p_player = cPlayerManager::Find_Player(WideStringClass(input));
 
 		if (!cNetwork::I_Am_Server() || p_player == NULL) {
 		   Print(Get_Help());

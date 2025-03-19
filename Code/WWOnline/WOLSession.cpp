@@ -2987,7 +2987,7 @@ void Session::GetLocaleStrings(std::vector<WideStringClass>& localeStrings)
 		{
 		const char* name = NULL;
 		mChat->GetLocaleString(&name, (WOL::Locale)index);
-		localeStrings.push_back(name);
+		localeStrings.push_back(WideStringClass(name));
 		}
 	}
 
