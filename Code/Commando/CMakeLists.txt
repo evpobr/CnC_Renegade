@@ -102,7 +102,7 @@ add_executable(Renegade WIN32
     # ../../../RenegadeMe/Doc/todo.txt
     # End Group
     # Begin Group "Wol"
-    BandwidthCheck.cpp
+    bandwidthcheck.cpp
     bandwidthcheck.h
     FirewallWait.cpp
     FirewallWait.h
@@ -120,7 +120,7 @@ add_executable(Renegade WIN32
     WOLGameInfo.h
     WOLJoinGame.cpp
     WOLJoinGame.h
-    WOLLocaleMgr.cpp
+    wollocalemgr.cpp
     wollocalemgr.h
     WOLLoginProfile.cpp
     WOLLoginProfile.h
