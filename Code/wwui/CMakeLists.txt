@@ -87,4 +87,4 @@ add_library(wwui STATIC
     wwuiinput.h
 )
 target_compile_definitions(wwui PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_WARNINGS)
-target_link_libraries(wwui PRIVATE wwlib wwmath wwdebug ww3d2 wwaudio WWAudio wwtranslatedb)
+target_link_libraries(wwui PRIVATE wwlib wwmath wwdebug ww3d2 WWAudio wwtranslatedb)
