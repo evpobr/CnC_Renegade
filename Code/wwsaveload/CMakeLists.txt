@@ -33,6 +33,6 @@ add_library(wwsaveload STATIC
     wwsaveload.cpp
     wwsaveload.h
 )
-target_include_directories(wwsaveload PRIVATE ../wwlib ../wwdebug ../wwmath PUBLIC .)
-target_link_libraries(wwsaveload PUBLIC wwmath)
+target_include_directories(wwsaveload PUBLIC .)
+target_link_libraries(wwsaveload PUBLIC wwmath wwlib PRIVATE wwdebug)
 target_compile_definitions(wwsaveload PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_WARNINGS)
