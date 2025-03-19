@@ -82,3 +82,4 @@ add_library(wwmath STATIC
 )
 target_include_directories(wwmath PUBLIC .)
 target_link_libraries(wwmath PUBLIC wwlib wwsaveload)
+target_compile_definitions(wwmath PRIVATE _CRT_NONSTDC_NO_WARNINGS)
