@@ -31,7 +31,7 @@ add_library(ww3d2 STATIC
     dynamesh.cpp
     font3d.cpp
     formconv.cpp
-    FramGrab.cpp
+    framgrab.cpp
     hanim.cpp
     hanimmgr.cpp
     hcanim.cpp
@@ -143,7 +143,7 @@ add_library(ww3d2 STATIC
     hanimmgr.h
     hcanim.h
     hlod.h
-    hmdldef.H
+    hmdldef.h
     hmorphanim.h
     hrawanim.h
     htree.h
@@ -194,7 +194,7 @@ add_library(ww3d2 STATIC
     seglinerenderer.h
     shader.h
     shattersystem.h
-    snapPts.h
+    snappts.h
     sortingrenderer.h
     soundrobj.h
     sphereobj.h

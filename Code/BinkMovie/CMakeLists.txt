@@ -3,9 +3,9 @@ add_library(BinkMovie STATIC
     subtitle.cpp
     subtitlemanager.cpp
     subtitleparser.cpp
-    BINK.H
+    bink.h
     BINKMovie.h
-    RAD.H
+    rad.h
     subtitle.h
     subtitlemanager.h
     subtitleparser.h
