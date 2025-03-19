@@ -9,6 +9,5 @@ add_library(wwbitpack STATIC
     encodertypeentry.cpp
     encodertypeentry.h
 )
-target_include_directories(wwbitpack PRIVATE ../wwlib ../wwdebug ../wwutil PUBLIC .)
-target_link_libraries(wwbitpack PUBLIC wwutil)
-
+target_include_directories(wwbitpack PUBLIC .)
+target_link_libraries(wwbitpack PUBLIC wwutil wwdebug wwmath wwlib)
