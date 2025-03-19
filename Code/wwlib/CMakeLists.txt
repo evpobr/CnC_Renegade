@@ -49,8 +49,6 @@ add_library(wwlib STATIC
     crcpipe.h
     crcstraw.cpp
     crcstraw.h
-    critsection.cpp
-    critsection.h
     cstraw.cpp
     cstraw.h
     data.cpp
