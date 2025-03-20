@@ -1995,7 +1995,7 @@ bool Open_Raw_Sockets(int &failure_code)
 	** Create a socket for UDP packets.
 	*/
 	if (use_group) {
-		RawSocket = WSASocket(AF_INET, SOCK_RAW, IPPROTO_UDP, NULL, SG_UNCONSTRAINED_GROUP, 0);
+		RawSocket = WSASocketW(AF_INET, SOCK_RAW, IPPROTO_UDP, NULL, SG_UNCONSTRAINED_GROUP, 0);
 		if (RawSocket == INVALID_SOCKET) {
 			DebugString("Unable to create raw UDP socket with SG_UNCONSTRAINED_GROUP - error code \n", WSAGetLastError());
 			use_group = false;
@@ -2036,7 +2036,7 @@ bool Open_Raw_Sockets(int &failure_code)
 	** Create a socket for ICMP packets.
 	*/
 	if (use_group) {
-		ICMPRawSocket = WSASocket(AF_INET, SOCK_RAW, IPPROTO_ICMP, NULL, group, 0);
+		ICMPRawSocket = WSASocketW(AF_INET, SOCK_RAW, IPPROTO_ICMP, NULL, group, 0);
 	} else {
 		ICMPRawSocket = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP);
 	}
