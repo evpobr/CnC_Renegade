@@ -306,7 +306,7 @@ void BINKMovieClass::Render()
 					h = Bink->Height-TextureInfos[t].TextureLocY;
 				}
 
-				D3DSURFACE_DESC d3d_surf_desc;
+				D3DSURFACE_DESC8 d3d_surf_desc;
 				D3DLOCKED_RECT locked_rect;
 
 				DX8_ErrorCode(d3d_texture->GetLevelDesc(0, &d3d_surf_desc));

@@ -272,3 +272,4 @@ add_library(Combat STATIC
 target_include_directories(Combat PRIVATE ../wwui ../wwutil ../wwbitpack ../wwaudio ../miles6/include ../wwnet ../wwmath ../ww3d2 ../wwphys ../wwlib ../wwdebug ../wwsaveload ../DirectX/include ../wwtranslatedb)
 target_compile_definitions(Combat PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_DEPRECATE)
 target_compile_options(Combat PRIVATE /permissive)
+target_link_libraries(Combat PRIVATE ww3d2)

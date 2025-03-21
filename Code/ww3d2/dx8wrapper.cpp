@@ -66,7 +66,8 @@
 #include "missingtexture.h"
 #include "thread.h"
 #include <stdio.h>
-#include <D3dx8core.h>
+#include <d3d8types.hpp>
+#include <d3dx8tex.h>
 #include "pot.h"
 #include "wwprofile.h"
 #include "ffactory.h"
@@ -156,7 +157,7 @@ static unsigned				last_frame_number_of_DX8_calls						= 0;
 
 static D3DDISPLAYMODE DesktopMode;
 
-static D3DPRESENT_PARAMETERS								_PresentParameters;
+static D3DPRESENT_PARAMETERS8								_PresentParameters;
 static DynamicVectorClass<StringClass>					_RenderDeviceNameTable;
 static DynamicVectorClass<StringClass>					_RenderDeviceShortNameTable;
 static DynamicVectorClass<RenderDeviceDescClass>	_RenderDeviceDescriptionTable;
@@ -357,7 +358,7 @@ void DX8Wrapper::Set_Default_Global_Render_States(void)
 	Set_DX8_Render_State(D3DRS_FOGVERTEXMODE, D3DFOG_LINEAR);
 	Set_DX8_Render_State(D3DRS_SPECULARMATERIALSOURCE, D3DMCS_MATERIAL);
 	Set_DX8_Render_State(D3DRS_COLORVERTEX, TRUE);
-	Set_DX8_Render_State(D3DRS_ZBIAS,0);
+	Set_DX8_Render_State((D3DRENDERSTATETYPE)D3DRS_ZBIAS,0);
 	Set_DX8_Texture_Stage_State(1, D3DTSS_BUMPENVLSCALE, F2DW(1.0f));
 	Set_DX8_Texture_Stage_State(1, D3DTSS_BUMPENVLOFFSET, F2DW(0.0f));
 	Set_DX8_Texture_Stage_State(0, D3DTSS_BUMPENVMAT00,F2DW(1.0f));
@@ -1038,7 +1039,7 @@ void DX8Wrapper::Get_Render_Target_Resolution(int & set_w,int & set_h,int & set_
 	WWASSERT(IsInitted);
 
 	if (CurrentRenderTarget != NULL) {
-		D3DSURFACE_DESC info;
+		D3DSURFACE_DESC8 info;
 		CurrentRenderTarget->GetDesc (&info);
 
 		set_w				= info.Width;
@@ -2213,7 +2214,7 @@ IDirect3DTexture8 * DX8Wrapper::_Create_DX8_Texture(
 	}
 
 	// Make sure texture wasn't paletted!
-	D3DSURFACE_DESC desc;
+	D3DSURFACE_DESC8 desc;
 	texture->GetLevelDesc(0,&desc);
 	if (desc.Format==D3DFMT_P8) {
 		texture->Release();
@@ -2230,7 +2231,7 @@ IDirect3DTexture8 * DX8Wrapper::_Create_DX8_Texture(
 	DX8_Assert();
 	IDirect3DTexture8 *texture = NULL;
 
-	D3DSURFACE_DESC surface_desc;
+	D3DSURFACE_DESC8 surface_desc;
 	::ZeroMemory(&surface_desc, sizeof(D3DSURFACE_DESC));
 	surface->GetDesc(&surface_desc);
 
@@ -2552,7 +2553,7 @@ DX8Wrapper::Set_Render_Target(IDirect3DSwapChain8 *swap_chain)
 	//
 	//	Get the back buffer for the swap chain
 	//
-	LPDIRECT3DSURFACE8 render_target = NULL;
+	IDirect3DSurface8 *render_target = NULL;
 	swap_chain->GetBackBuffer (0, D3DBACKBUFFER_TYPE_MONO, &render_target);
 
 	//
@@ -2675,11 +2676,11 @@ DX8Wrapper::Create_Additional_Swap_Chain (HWND render_window)
 	//
 	//	Configure the presentation parameters for a windowed render target
 	//
-	D3DPRESENT_PARAMETERS params				= { 0 };
+	D3DPRESENT_PARAMETERS8 params				= { 0 };
 	params.BackBufferFormat						= _PresentParameters.BackBufferFormat;
 	params.BackBufferCount						= 1;
 	params.MultiSampleType						= D3DMULTISAMPLE_NONE;
-	params.SwapEffect								= D3DSWAPEFFECT_COPY_VSYNC;
+	params.SwapEffect								= D3DSWAPEFFECT_COPY;
 	params.hDeviceWindow							= render_window;
 	params.Windowed								= TRUE;
 	params.EnableAutoDepthStencil				= TRUE;

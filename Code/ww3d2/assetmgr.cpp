@@ -107,7 +107,7 @@
 #include <ini.h>
 #include <windows.h>
 #include <stdio.h>
-#include <D3dx8core.h>
+//#include <D3dx8core.h>
 #include "texture.h"
 #include "wwprofile.h"
 #include "assetstatus.h"
@@ -299,7 +299,7 @@ static void Log_Textures(bool inited,unsigned& total_count, unsigned& total_mem)
 		TextureClass * tex=ite.Peek_Value();
 		if (tex->Is_Initialized()!=inited) continue;
 
-		D3DSURFACE_DESC desc;
+		D3DSURFACE_DESC8 desc;
 		IDirect3DTexture8* d3d_texture=tex->Peek_DX8_Texture();
 		if (!d3d_texture) continue;
 		DX8_ErrorCode(d3d_texture->GetLevelDesc(0,&desc));

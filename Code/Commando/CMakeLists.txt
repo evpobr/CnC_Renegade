@@ -558,5 +558,5 @@ target_include_directories(Renegade
 )
 target_compile_definitions(Renegade PRIVATE OBSIDIAN DIRECTX _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_DEPRECATE)
 target_link_directories(Renegade PRIVATE ../DirectX/lib)
-target_link_libraries(Renegade PRIVATE winmm version ws2_32 wwlib Combat wwbitpack wwphys ww3d2 WWAudio wwnet wwui BinkMovie BandTest SControl dxguid d3dx8 dinput dinput8 ddraw)
+target_link_libraries(Renegade PRIVATE winmm version ws2_32 wwlib Combat wwbitpack wwphys ww3d2 WWAudio wwnet wwui BinkMovie BandTest SControl dxguid d3d8 d3dx8 dinput dinput8 ddraw)
 target_link_options(Renegade PRIVATE /NODEFAULTLIB:libci)

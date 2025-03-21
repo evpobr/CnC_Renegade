@@ -1,0 +1,8 @@
+{
+    "name": "lod",
+    "description": "HoMM III data extraction library",
+    "version-semver": "1.0.0",
+    "dependencies": [
+        "dxsdk-d3dx"
+    ]
+}

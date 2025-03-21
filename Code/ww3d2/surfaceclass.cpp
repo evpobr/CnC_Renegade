@@ -249,7 +249,7 @@ SurfaceClass::~SurfaceClass(void)
 
 void SurfaceClass::Get_Description(SurfaceDescription &surface_desc)
 {
-	D3DSURFACE_DESC d3d_desc;
+	D3DSURFACE_DESC8 d3d_desc;
 	::ZeroMemory(&d3d_desc, sizeof(D3DSURFACE_DESC));
 	DX8_ErrorCode(D3DSurface->GetDesc(&d3d_desc));
 	surface_desc.Format = D3DFormat_To_WW3DFormat(d3d_desc.Format);

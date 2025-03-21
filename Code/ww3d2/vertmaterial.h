@@ -44,6 +44,8 @@
 
 #include "always.h"
 
+//#include "d3d8.hpp"
+
 #include "refcount.h"
 #include "vector3.h"
 #include "w3d_file.h"
@@ -56,7 +58,9 @@
 
 class ChunkLoadClass;
 class ChunkSaveClass;
-struct _D3DMATERIAL8;
+
+struct _D3DMATERIAL9;
+typedef struct _D3DMATERIAL9 D3DMATERIAL8;
 
 /**
 ** VertexMaterialClass
@@ -236,7 +240,7 @@ protected:
 
 	// We're using the pointer instead of the actual structure
 	// so we don't have to include the d3d header - HY
-	_D3DMATERIAL8 *		Material;
+	D3DMATERIAL8			*Material;
 	unsigned int			Flags;
 	unsigned int			AmbientColorSource;
 	unsigned int			EmissiveColorSource;

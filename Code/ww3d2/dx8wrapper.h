@@ -45,7 +45,7 @@
 
 #include "always.h"
 #include "dllist.h"
-#include "d3d8.h"
+#include "d3d8.hpp"
 #include "matrix4.h"
 #include "statistics.h"
 #include "wwstring.h"
@@ -1004,7 +1004,7 @@ WWINLINE void DX8Wrapper::Set_DX8_ZBias(int zbias)
 		DX8CALL(SetTransform(D3DTS_PROJECTION,(D3DMATRIX*)&tmp));
 	}
 	else {
-		Set_DX8_Render_State (D3DRS_ZBIAS, ZBias);
+		Set_DX8_Render_State ((D3DRENDERSTATETYPE)D3DRS_ZBIAS, ZBias);
 	}
 }
 

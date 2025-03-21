@@ -47,7 +47,7 @@
 #include "terrainmaterial.h"
 #include "heightfieldpage.h"
 #include "textureloader.h"
-#include "d3d8types.h"
+#include "d3d8types.hpp"
 #include "dx8wrapper.h"
 #include "bitmaphandler.h"
 

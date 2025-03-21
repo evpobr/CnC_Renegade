@@ -239,6 +239,7 @@ add_library(ww3d2 STATIC
 target_include_directories(ww3d2
     PUBLIC
         .
+        ../DirectX
         ../DirectX/include
     PRIVATE
         ../wwlib
@@ -250,4 +251,5 @@ target_include_directories(ww3d2
         ../miles6/include
 )
 target_compile_definitions(ww3d2 PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_DEPRECATE)
-target_link_libraries(ww3d2 PUBLIC wwsaveload PRIVATE vfw32)
+target_link_directories(ww3d2 PUBLIC ../DirectX/lib)
+target_link_libraries(ww3d2 PUBLIC wwsaveload PRIVATE vfw32 d3d8 d3dx8 Microsoft::D3DX9)

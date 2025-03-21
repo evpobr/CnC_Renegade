@@ -1279,7 +1279,7 @@ void WW3D::Make_Screen_Shot( const char * filename_base )
 
 	IDirect3DSurface8 *fb;
 	fb=DX8Wrapper::_Get_DX8_Front_Buffer();
-	D3DSURFACE_DESC desc;
+	D3DSURFACE_DESC8 desc;
 	fb->GetDesc(&desc);
 
 	RECT bounds;
@@ -1561,7 +1561,7 @@ void WW3D::Update_Movie_Capture( void )
 
 	IDirect3DSurface8 *fb;
 	fb=DX8Wrapper::_Get_DX8_Front_Buffer();
-	D3DSURFACE_DESC desc;
+	D3DSURFACE_DESC8 desc;
 	fb->GetDesc(&desc);
 
 	RECT bounds;

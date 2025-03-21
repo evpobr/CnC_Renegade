@@ -221,7 +221,7 @@ void DDSFileClass::Copy_Level_To_Surface(unsigned level,IDirect3DSurface8* d3d_s
 {
 	WWASSERT(d3d_surface);
 	// Verify that the destination surface size matches the source surface size
-	D3DSURFACE_DESC surface_desc;
+	D3DSURFACE_DESC8 surface_desc;
 	DX8_ErrorCode(d3d_surface->GetDesc(&surface_desc));
 
 	// First lock the surface
