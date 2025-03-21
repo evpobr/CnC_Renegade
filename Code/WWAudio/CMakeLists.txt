@@ -46,7 +46,7 @@ add_library(WWAudio STATIC
 target_include_directories(WWAudio
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
-        ${Miles_INCLUDE_DIRS}
+        ../Miles6/include
 )
 target_compile_definitions(WWAudio PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_DEPRECATE WINDOWS_IGNORE_PACKING_MISMATCH)
 target_link_libraries(WWAudio
@@ -57,6 +57,7 @@ target_link_libraries(WWAudio
         wwsaveload
     PRIVATE
         ww3d2
-        ${Miles_LIBRARIES}
+        mss32
+        mss32_2
 )
-target_link_directories(WWAudio PRIVATE ../Miles6/lib/win)
+target_link_directories(WWAudio PUBLIC ../Miles6/lib/win)
