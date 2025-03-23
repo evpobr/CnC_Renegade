@@ -764,6 +764,7 @@ WWPROFILE( "Input Active" );
 			//
 			//	Add all the 2D sounds to the message
 			//
+			int sample_index;
 			for (sample_index = 0; sample_index < count_3d; sample_index ++) {
 				temp_string.Format (" %d.", sample_index + 1);
 				message += temp_string;
@@ -1759,23 +1760,3 @@ void	ConsoleGameModeClass::Update_Memory_Log( void )
 
 	StatisticsDisplayManager::Set_Stat( "memory", memory_string, 0xffffffff );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

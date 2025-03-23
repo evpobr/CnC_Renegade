@@ -1,0 +1,63 @@
+add_library(WWAudio STATIC
+    AudibleSound.cpp
+    AudioEvents.cpp
+    AudioSaveLoad.cpp
+    FilteredSound.cpp
+    Listener.cpp
+    listenerhandle.cpp
+    LogicalListener.cpp
+    LogicalSound.cpp
+    sound2dhandle.cpp
+    Sound3D.cpp
+    sound3dhandle.cpp
+    SoundBuffer.cpp
+    soundhandle.cpp
+    SoundPseudo3D.cpp
+    SoundScene.cpp
+    SoundSceneObj.cpp
+    soundstreamhandle.cpp
+    Threads.cpp
+    Utils.cpp
+    WWAudio.cpp
+    AABTreeSoundCullClass.h
+    AudibleSound.h
+    AudioEvents.h
+    AudioSaveLoad.h
+    FilteredSound.h
+    Listener.h
+    listenerhandle.h
+    LogicalListener.h
+    LogicalSound.h
+    PriorityVector.h
+    sound2dhandle.h
+    Sound3D.h
+    sound3dhandle.h
+    SoundBuffer.h
+    SoundCullObj.h
+    soundhandle.h
+    SoundPseudo3D.h
+    SoundScene.h
+    SoundSceneObj.h
+    soundstreamhandle.h
+    Threads.h
+    Utils.h
+    WWAudio.h
+)
+target_include_directories(WWAudio
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ../Miles6/include
+)
+target_compile_definitions(WWAudio PRIVATE _CRT_SECURE_NO_WARNINGS _CRT_NONSTDC_NO_DEPRECATE WINDOWS_IGNORE_PACKING_MISMATCH)
+target_link_libraries(WWAudio
+    PUBLIC
+        wwmath
+        wwlib
+        wwdebug
+        wwsaveload
+    PRIVATE
+        ww3d2
+        mss32
+        mss32_2
+)
+target_link_directories(WWAudio PUBLIC ../Miles6/lib/win)

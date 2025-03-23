@@ -59,6 +59,7 @@
 #include "dx8vertexbuffer.h"
 #include "dx8indexbuffer.h"
 #include "vertmaterial.h"
+#include "render2d.h"
 
 /*
 ** Registry value names
@@ -760,6 +761,7 @@ WWINLINE unsigned int DX8Wrapper::Convert_Color(const Vector4& color)
 WWINLINE unsigned int DX8Wrapper::Convert_Color(const Vector3& color,float alpha)
 {
 	const float scale = 255.0;
+#if 0
 	unsigned int col;
 
 	// Multiply r, g, b and a components (0.0,...,1.0) by 255 and convert to integer. Or the integer values togerher
@@ -827,6 +829,9 @@ not_changed:
 		mov	col,eax
 	}
 	return col;
+#else
+	return FRGB_TO_INT32(color.X, color.Y, color.Z);
+#endif
 }
 
 // ----------------------------------------------------------------------------

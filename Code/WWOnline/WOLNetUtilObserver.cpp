@@ -235,7 +235,7 @@ STDMETHODIMP NetUtilObserver::OnPing(HRESULT result, int time, unsigned long ip,
 
 	if ((pingIndex >= 0) && ((unsigned)pingIndex < mOuter->mPingRequests.size()))
 		{
-		RawPing* ping = &mOuter->mPingRequests[pingIndex];
+		std::vector<RawPing>::iterator ping = mOuter->mPingRequests.begin() + pingIndex;
 		ping->SetTime(time);
 		ping->SetIPAddress(ip);
 
@@ -563,7 +563,7 @@ STDMETHODIMP NetUtilObserver::OnNewNick(HRESULT result, LPCSTR message, LPCSTR n
 		login = LoginInfo::Create(nickname, password, true);
 		}
 		
-	NewLoginInfoEvent event(login, message);
+	NewLoginInfoEvent event(login, WideStringClass(message));
 	mOuter->NotifyObservers(event);
 
 	return S_OK;

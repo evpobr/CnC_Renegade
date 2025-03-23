@@ -625,7 +625,7 @@ void MPWolChatMenuClass::On_ListCtrl_Mouse_Over(ListCtrlClass* list, int id, int
 				if (clan.IsValid())
 					{
 					userinfo += L" : ";
-					userinfo += clan->GetName();
+					userinfo += WideStringClass(clan->GetName());
 					}
 
 				userinfo += L" : ";

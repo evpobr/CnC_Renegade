@@ -77,6 +77,17 @@ RegistryClass::RegistryClass( const char * sub_key, bool create ) :
 		result = RegOpenKeyEx(HKEY_LOCAL_MACHINE, sub_key, 0, IsLocked ? KEY_READ : KEY_ALL_ACCESS, &key);
 	}
 
+	if (ERROR_ACCESS_DENIED == result)
+	{
+		if (create && !IsLocked) {
+			DWORD disposition;
+			result = RegCreateKeyEx(HKEY_CURRENT_USER, sub_key, 0, NULL, 0,
+				KEY_ALL_ACCESS, NULL, &key, &disposition);
+		} else {
+			result = RegOpenKeyEx(HKEY_CURRENT_USER, sub_key, 0, IsLocked ? KEY_READ : KEY_ALL_ACCESS, &key);
+		}
+	}
+
 	if (ERROR_SUCCESS == result) {
 		IsValid = true;
 		Key = (int)key;

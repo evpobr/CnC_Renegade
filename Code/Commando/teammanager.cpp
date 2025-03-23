@@ -559,6 +559,7 @@ void cTeamManager::Render_Team_List(void)
 	}
 
 	// Verify that the team list is valid
+   int j;
    for (int j = 0; j < MAX_TEAMS; j++) {
 		if (!Team_Array[j]) {
 			Sort_Teams();
@@ -637,25 +638,8 @@ void cTeamManager::Render_Team_List(void)
    //
    List_Print(heading, Vector3(1, 1, 1));
 
-   for (j = 0; j < MAX_TEAMS; j++) {
+   for (int j = 0; j < MAX_TEAMS; j++) {
 		List_Print(renderer_team_strings[j], renderer_team_colors[j]);
    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

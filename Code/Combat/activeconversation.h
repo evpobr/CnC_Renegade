@@ -171,7 +171,7 @@ protected:
 
 	enum
 	{
-		MAX_MONITORS	= 10,
+		MONITORS_MAX	= 10,
 	};
 
 	////////////////////////////////////////////////////////////////
@@ -185,7 +185,7 @@ protected:
 	int												ActionID;
 	int												OratorSpokenBitmask;
 	Vector3											CentralPos;
-	GameObjReference								MonitorArray[MAX_MONITORS];
+	GameObjReference								MonitorArray[MONITORS_MAX];
 	AudibleSoundClass *							CurrentSound;
 
 	int												State;

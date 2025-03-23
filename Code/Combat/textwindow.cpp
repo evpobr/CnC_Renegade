@@ -323,6 +323,7 @@ TextWindowClass::Set_Backdrop
 		//	Tile the endcaps appropriately
 		//
 		section_count = screen_rect.Height () / endcap_height;
+		int index;
 		for (index = 0; index < section_count; index ++) {
 
 			//

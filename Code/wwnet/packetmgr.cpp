@@ -358,6 +358,7 @@ int PacketManagerClass::Build_Delta_Packet_Patch(unsigned char *base_packet, uns
 		*/
 		read_bit_pos = 0;
 		num_diff_bytes = 0;
+		int i;
 		for (i=0 ; i<base_packet_size ; i+= 8) {
 
 			/*

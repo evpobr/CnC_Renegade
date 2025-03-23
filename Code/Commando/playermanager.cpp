@@ -1376,6 +1376,7 @@ void cPlayerManager::Render_Player_List(void)
 	*/
    List_Print(heading, Vector3(1, 1, 1));
 
+    int j;
 	for (j = 0; j < renderer_displayed_player_count; j++) {
 		//
 		// Put a symbol next to my name so that it stands out

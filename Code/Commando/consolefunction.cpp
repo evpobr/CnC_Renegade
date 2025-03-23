@@ -3580,12 +3580,12 @@ public:
 	virtual	const char * Get_Name( void )	{ return "resolution"; }
 	virtual	const char * Get_Help( void )	{ return "RESOLUTION [+|-]"; }
 	virtual	void Activate( const char * input ) {
-		int w,h,bits;
+		int w,h,bits,i;
 		bool windowed;
 		WW3D::Get_Device_Resolution(w,h,bits,windowed);
 		const RenderDeviceDescClass& desc=WW3D::Get_Render_Device_Desc();
 		const DynamicVectorClass<ResolutionDescClass> & resos=desc.Enumerate_Resolutions();
-		for (int i=0;i<resos.Count();++i) {
+		for (i=0;i<resos.Count();++i) {
 			if (resos[i].Width==w && resos[i].Height==h && resos[i].BitDepth==bits) {
 				break;
 			}
@@ -3678,7 +3678,7 @@ public:
 		::sscanf(input, "%d %s", &amount, recipient);
 
 		cPlayer * p_me = cNetwork::Get_My_Player_Object();
-		cPlayer * p_recipient = cPlayerManager::Find_Player(recipient);
+		cPlayer * p_recipient = cPlayerManager::Find_Player(WideStringClass(recipient));
 
 		if (p_me != NULL &&
 			 p_recipient != NULL &&
@@ -3739,7 +3739,7 @@ public:
 #endif
 */
 
-		cPlayer * p_player = cPlayerManager::Find_Player(input);
+		cPlayer * p_player = cPlayerManager::Find_Player(WideStringClass(input));
 		if (p_player != NULL) {
 			int id = p_player->Get_Id();
 			cNetwork::Server_Kill_Connection(id);
@@ -4148,7 +4148,8 @@ public:
 			if (!input || !(*input)) return;
 			cPlayer *player = NULL;
 
-			for (SLNode<cPlayer> *player_node = cPlayerManager::Get_Player_Object_List ()->Head ()
+			SLNode<cPlayer> *player_node;
+			for (player_node = cPlayerManager::Get_Player_Object_List ()->Head ()
 				; player_node != NULL; player_node = player_node->Next ()) {
 
 				player = player_node->Data ();
@@ -4690,7 +4691,7 @@ public:
 	virtual	const char * Get_Name (void)	{return ("whois");}
 	virtual	const char * Get_Help (void)	{return ("WHOIS <player name> - who the heck is this annoying bugger? (server only)\n");}
 	virtual	void Activate (const char *input) {
-		cPlayer * p_player = cPlayerManager::Find_Player(input);
+		cPlayer * p_player = cPlayerManager::Find_Player(WideStringClass(input));
 
 		if (!cNetwork::I_Am_Server() || p_player == NULL) {
 		   Print(Get_Help());

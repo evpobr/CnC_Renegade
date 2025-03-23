@@ -2352,7 +2352,8 @@ void cConnection::Service_Send(bool is_urgent)
          //
          // Send any appropriate queued packets
          //
-	      for (SLNode<cPacket> * objnode = p_rhost->Get_Packet_List(UNRELIABLE_SEND_LIST).Head();
+		  SLNode<cPacket> * objnode;
+	      for (objnode = p_rhost->Get_Packet_List(UNRELIABLE_SEND_LIST).Head();
             objnode != NULL; objnode = objnode->Next()) {
 
             cPacket * p_packet = objnode->Data();

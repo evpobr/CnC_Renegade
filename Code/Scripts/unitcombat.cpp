@@ -89,7 +89,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 			GameObject *controller = Commands->Find_Object(controller_id);
 			if ( controller )
 			{
-				Commands->Send_Custom_Event( obj, controller, OV_ANIMCOMPLETE, 0);
+				Commands->Send_Custom_Event( obj, controller, OV_ANIMCOMPLETE, 0, 0);
 				return;
 			}
 		}
@@ -130,14 +130,15 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		float duration;
 		duration = Commands->Get_Random( 5, 15 );
 
-		Commands->Start_Timer ( obj, duration, TIMER_IDLE_ANIM );
+		// TODO second parameter was missing
+		Commands->Start_Timer ( obj, NULL, duration, TIMER_IDLE_ANIM );
 
 		if ( script_override > 0 )
 		{
 			GameObject *controller = Commands->Find_Object(controller_id);
 			if ( controller )
 			{
-				Commands->Send_Custom_Event( obj, controller, OV_CREATED, 0);
+				Commands->Send_Custom_Event( obj, controller, OV_CREATED, 0, 0);
 			}
 		}
 		else
@@ -214,7 +215,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 				GameObject *controller = Commands->Find_Object(controller_id);
 				if ( controller )
 				{
-					Commands->Send_Custom_Event( obj, controller, OV_CONFIRM, 0);
+					Commands->Send_Custom_Event( obj, controller, OV_CONFIRM, 0, 0);
 				}
 			}
 			return;
@@ -227,7 +228,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 				{
 					Sound_Create_Defensive_Attack( obj );
 				}
-				Commands->Send_Custom_Event( obj, sender, CUSTOM_TARGET_INFO, enemy_id);
+				Commands->Send_Custom_Event( obj, sender, CUSTOM_TARGET_INFO, enemy_id, 0);
 			}
 		}
 		else if ( type == CUSTOM_TARGET_INFO )
@@ -270,13 +271,13 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		} 
 		else
 		{
-			Commands->Set_Animation( obj,NULL,0);
+			Commands->Set_Animation( obj,NULL,0, NULL, 0.0, -1.0f, false);
 			if ( script_override > 0 )
 			{
 				GameObject *controller = Commands->Find_Object(controller_id);
 				if ( controller )
 				{
-					Commands->Send_Custom_Event( obj, controller, OV_DAMAGED, 0);
+					Commands->Send_Custom_Event( obj, controller, OV_DAMAGED, 0, 0);
 					return;
 				}
 			}
@@ -325,7 +326,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 			GameObject *controller = Commands->Find_Object(controller_id);
 			if ( controller )
 			{
-				Commands->Send_Custom_Event( obj, Commands->Find_Object(controller_id), OV_ENEMYSEEN, 0);
+				Commands->Send_Custom_Event( obj, Commands->Find_Object(controller_id), OV_ENEMYSEEN, 0, 0);
 			}
 			return;
 		}
@@ -389,7 +390,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 					GameObject *controller = Commands->Find_Object(controller_id);
 					if ( controller )
 					{
-						Commands->Send_Custom_Event( obj, controller, OV_ARRIVED, 0);
+						Commands->Send_Custom_Event( obj, controller, OV_ARRIVED, 0, 0);
 						return;
 					}
 				}
@@ -428,7 +429,8 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 				{
 					if ( function == FUNC_SEARCH_LOCATION )
 					{
-						Commands->Start_Timer( obj, 10.0, TIMER_SEARCH_LOCATION );
+						// TODO
+						Commands->Start_Timer( obj, NULL, 10.0, TIMER_SEARCH_LOCATION );
 						Function_Search_Circle( obj, searchposition, 10.0f);
 					}
 					else if ( function == FUNC_SEARCH_CIRCLE )
@@ -820,17 +822,17 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		{
 			state = STATE_SEARCH;
 			function = FUNC_PANIC;
-			Commands->Set_Animation( obj, NULL, 0);
+			Commands->Set_Animation( obj, NULL, 0, NULL, 0.0, -1.0f, false);
 			if ( Commands->Get_Random( 0.0f, 1.0f) < 0.5f )
 			{
-				Commands->Set_Animation( obj, "human.j21c01",0);
+				Commands->Set_Animation( obj, "human.j21c01",0, NULL, 0.0, -1.0f, false);
 			}
 		}
 	}
 
 	void Function_Play_Idle_Anim(GameObject * obj)
 	{
-		Commands->Set_Animation( obj, NULL, 0);
+		Commands->Set_Animation( obj, NULL, 0, NULL, 0.0, -1.0f, false);
 		float animnum = Commands->Get_Random(0,90);
 		if (animnum <= 10)
 		{anim_script = "human.j03c01";}else
@@ -851,7 +853,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		if (animnum <= 90)
 		{anim_script = "human.j20c01";}
 		state = STATE_IDLE_ANIMATION;
-		Commands->Set_Animation( obj, anim_script, 0);
+		Commands->Set_Animation( obj, anim_script, 0, NULL, 0.0, -1.0f, false);
 	}
 
 /*
@@ -962,7 +964,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 
 	void Function_Play_Search_Anim( GameObject * obj )
 	{
-		Commands->Set_Animation( obj, NULL, 0);
+		Commands->Set_Animation( obj, NULL, 0, NULL, 0.0, -1.0f, false);
 		float animnum = Commands->Get_Random(0,30);
 		if ( animnum <= 10 )
 		{anim_script = "human.j09c01";}
@@ -971,7 +973,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		else if( animnum <= 30 )
 		{anim_script = "human.j11c01";}
 
-		Commands->Set_Animation( obj, anim_script, 0);
+		Commands->Set_Animation( obj, anim_script, 0, NULL, 0.0, -1.0f, false);
 	}
 
 
@@ -1278,7 +1280,7 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 		state = STATE_CRITICAL;
 		Commands->Action_Movement_Stop( obj );
 		Commands->Action_Attack_Stop( obj );
-		Commands->Set_Animation( obj, NULL, 0);
+		Commands->Set_Animation( obj, NULL, 0, NULL, 0.0, -1.0f, false);
 		Commands->Enable_Enemy_Seen( obj, false);
 //		Commands->Enable_Sound_Heard( Me, false);
 	}
@@ -1295,4 +1297,3 @@ DECLARE_SCRIPT ( Unit_Combat,"Scoreboard_ID=0:int,Controller_ID=0:int,Script_Ove
 	}
 
 };
-

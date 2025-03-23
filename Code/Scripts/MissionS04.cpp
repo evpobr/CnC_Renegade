@@ -56,4 +56,4 @@ DECLARE_SCRIPT(MS04_Gunboat_Waypath_Movement, "")
 		params.WaypathID = 100033;
 		Commands->Action_Goto( obj, params );
 	}
-}
+};
