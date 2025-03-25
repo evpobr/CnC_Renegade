@@ -303,7 +303,7 @@ WW3DErrorType MeshModelClass::Load_W3D(ChunkLoadClass & cload)
 			case W3D_MESH_FLAG_GEOMETRY_TYPE_NORMAL:
 				break;
 			case W3D_MESH_FLAG_GEOMETRY_TYPE_CAMERA_ALIGNED:
-				Set_Flag(ALIGNED,true);
+				Set_Flag(ALIGNED2,true);
 				break;
 			case W3D_MESH_FLAG_GEOMETRY_TYPE_CAMERA_ORIENTED:
 				Set_Flag(ORIENTED,true);

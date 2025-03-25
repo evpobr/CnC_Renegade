@@ -32,7 +32,9 @@
 #include "cnetwork.h"
 #include "dlgmpconnect.h"
 #include "gamespy_qnr.h"
+#ifdef USE_GAMESPY
 #include <Gamespy\ghttp.h>
+#endif
 #include "useroptions.h"
 #include "renegadedialogmgr.h"
 #include "dialogtests.h"
@@ -65,6 +67,7 @@ cGameSpyAdmin::Think
 	void
 )
 {
+#ifdef USE_GAMESPY
 	WWASSERT(Is_Gamespy_Game());
 
 	if (IsLaunchFromGamespyRequested && SplashIntroMenuDialogClass::Is_Complete ())
@@ -94,6 +97,7 @@ cGameSpyAdmin::Think
 		cGameSpyAuthMgr::Think();
 	}
 #endif // MULTIPLAYERDEMO
+#endif
 }
 
 //----------------------------------------------------------------------------------

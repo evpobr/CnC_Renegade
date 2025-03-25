@@ -1154,7 +1154,7 @@ bool MeshClass::Cast_Ray(RayCollisionTestClass & raytest)
 	Matrix3D world=Get_Transform();
 
 	// if aligned or oriented rotate the mesh so that it's aligned to the ray
-	if (Model->Get_Flag(MeshModelClass::ALIGNED)) {
+	if (Model->Get_Flag(MeshModelClass::ALIGNED2)) {
 			Vector3 mesh_position;
 			world.Get_Translation(&mesh_position);
 			world.Obj_Look_At(mesh_position,mesh_position - raytest.Ray.Get_Dir(),0.0f);
@@ -1445,7 +1445,7 @@ void MeshClass::Update_Cached_Bounding_Volumes(void) const
 
 	// If we are camera-aligned or -oriented, we don't know which way we are facing at this point,
 	// so the box we return needs to contain the sphere. Otherewise do the normal computation.
-	if (Model->Get_Flag(MeshModelClass::ALIGNED) || Model->Get_Flag(MeshModelClass::ORIENTED)) {
+	if (Model->Get_Flag(MeshModelClass::ALIGNED2) || Model->Get_Flag(MeshModelClass::ORIENTED)) {
 		CachedBoundingBox.Center = CachedBoundingSphere.Center;
 		CachedBoundingBox.Extent.Set(CachedBoundingSphere.Radius, CachedBoundingSphere.Radius, CachedBoundingSphere.Radius);
 	} else {

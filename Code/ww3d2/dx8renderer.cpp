@@ -1714,7 +1714,7 @@ void DX8TextureCategoryClass::Render(void)
 		bool identity=mesh->Is_Transform_Identity();
 		Matrix3D tmp_world;
 
-		if (mesh->Peek_Model()->Get_Flag(MeshModelClass::ALIGNED)) {
+		if (mesh->Peek_Model()->Get_Flag(MeshModelClass::ALIGNED2)) {
 			SNAPSHOT_SAY(("Camera mode ALIGNED\n"));
 
 			Vector3 mesh_position;

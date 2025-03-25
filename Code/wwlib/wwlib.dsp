@@ -201,10 +201,6 @@ SOURCE=.\gcd_lcm.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\gnu_regex.c
-# End Source File
-# Begin Source File
-
 SOURCE=.\hash.cpp
 # End Source File
 # Begin Source File
@@ -334,10 +330,6 @@ SOURCE=.\realcrc.cpp
 # Begin Source File
 
 SOURCE=.\refcount.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\regexpr.cpp
 # End Source File
 # Begin Source File
 
@@ -573,10 +565,6 @@ SOURCE=.\gcd_lcm.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\gnu_regex.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\growmix.h
 # End Source File
 # Begin Source File
@@ -754,10 +742,6 @@ SOURCE=.\ref_ptr.h
 # Begin Source File
 
 SOURCE=.\refcount.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\regexpr.h
 # End Source File
 # Begin Source File
 

@@ -34,8 +34,10 @@
  * Functions:                                                                                  *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
+#ifdef USE_GAMESPY
 #include <Gamespy\gs_patch_usage.h>
 #include <Gamespy\gcdkeyserver.h>
+#endif
 #include "specialbuilds.h"
 #include "dlgcncteaminfo.h"
 #include "resource.h"
@@ -224,6 +226,7 @@ void CGameSpyQnR::LaunchArcade(void) {
 }
 void CGameSpyQnR::Shutdown(void) {
 
+#ifdef USE_GAMESPY
 #ifndef BETACLIENT
 	if (m_GSInit) {
 		/*
@@ -236,10 +239,12 @@ void CGameSpyQnR::Shutdown(void) {
 		m_GSEnabled = m_GSInit = false;
 	}
 #endif
+#endif
 }
 
 void CGameSpyQnR::TrackUsage(void) {
 
+#ifdef USE_GAMESPY
 #ifndef WWDEBUG
 	char filename[MAX_PATH];
 	GetModuleFileName(NULL, filename, sizeof(filename));
@@ -254,10 +259,12 @@ void CGameSpyQnR::TrackUsage(void) {
 	// Send off usage Tracking info to GameSpy
 	ptTrackUsage(0, prodid, b.Peek_Buffer(), (cUserOptions::Sku.Get()&0xff)+438, false); 
 #endif // WWDEBUG
+#endif
 }
 
 void CGameSpyQnR::Init(void) {
 
+#ifdef USE_GAMESPY
 #ifndef BETACLIENT
 
 	if (m_GSEnabled && !m_GSInit && The_Game() && The_Game()->Get_Game_Type() == cGameData::GAME_TYPE_CNC) {
@@ -293,6 +300,7 @@ void CGameSpyQnR::Init(void) {
 		m_GSInit = TRUE;
 	}
 #endif
+#endif
 }
 
 /*******
@@ -312,6 +320,7 @@ Simulates a main game loop
 *****************/
 void CGameSpyQnR::Think()
 {
+#ifdef USE_GAMESPY
 	static DWORD stime = (DWORD)(0 - BANLIST_RELOAD_TIME);
 	static DWORD ttime = 0;
 
@@ -332,6 +341,7 @@ void CGameSpyQnR::Think()
 		qr_process_queries(query_reporting_rec);
 		gcd_think();
 	}
+#endif
 #endif
 }
 
@@ -555,6 +565,7 @@ void CGameSpyQnR::rules_callback(char *outbuf, int maxlen)
 
 BOOL CGameSpyQnR::Parse_HeartBeat_List(const char *list) {
 
+#ifdef USE_GAMESPY
 	BOOL master_added = false;
 
 	char *str = new char[strlen(list)+1];
@@ -595,6 +606,7 @@ BOOL CGameSpyQnR::Parse_HeartBeat_List(const char *list) {
 		ConsoleBox.Print("Assigning default HeartBeat List\n");
 		return false;
 	}
+#endif
 
 	return true;
 }

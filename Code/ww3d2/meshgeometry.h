@@ -104,7 +104,7 @@ public:
 		DISABLE_PLANE_EQ						= 0x00000080,
 		TWO_SIDED								= 0x00000100,
 	
-		ALIGNED									= 0x00000200,
+		ALIGNED2									= 0x00000200,
 		SKIN										= 0x00000400,
 		ORIENTED									= 0x00000800,
 		CAST_SHADOW								= 0x00001000,
