@@ -137,8 +137,10 @@ PathActionClass::Initialize
 	DoorState		= DOOR_STATE_GETTING_IN_POSITION;
 	LadderState		= LADDER_STATE_WAITING;
 	Timer				= 5;
+#ifdef WWDEBUG
 	assert(Path != NULL);
 	assert(Path->Get_Path_Vector_Length() >= Path->Get_Path_Vector_Count());
+#endif
 	Path->Get_Action_Entrance (Destination);
 	return ;
 }
@@ -222,8 +224,10 @@ PathActionClass::Handle_Ladder (void)
 				//
 				State			= STATE_MOVING;
 				LadderState	= LADDER_STATE_CLIMBING;
+#ifdef WWDEBUG
 				assert(Path != NULL);
 				assert(Path->Get_Path_Vector_Length() > Path->Get_Path_Vector_Count());
+#endif
 				Path->Get_Action_Destination (Destination);
 				Path->Set_Movement_Directions (PathClass::MOVE_Z);
 			} else {
@@ -294,8 +298,10 @@ PathActionClass::Handle_Jump (void)
 			//
 			if (soldier_obj->Is_Airborne ()) {
 				Vector3 dest(0,0,0);
+#ifdef WWDEBUG
 				assert(Path != NULL);
 				assert(Path->Get_Path_Vector_Length() > Path->Get_Path_Vector_Count());
+#endif
 				Path->Get_Action_Destination (dest);
 
 				Vector3 face_pt = dest + Vector3 (0, 0, soldier_obj->Get_Bullseye_Offset_Z() );
@@ -369,8 +375,10 @@ PathActionClass::Handle_Elevator (void)
 				ElevatorState	= ELEVATOR_STATE_EXITING;
 				State				= STATE_MOVING;
 				Timer				= 5.0F;
+#ifdef WWDEBUG
 				assert(Path != NULL);
 				assert(Path->Get_Path_Vector_Length() > Path->Get_Path_Vector_Count());
+#endif
 				Path->Get_Action_Destination (Destination);
 			} else {
 
@@ -476,8 +484,10 @@ PathActionClass::Handle_Door (void)
 				DoorState	= DOOR_STATE_ENTERING;
 				State			= STATE_MOVING;
 				Timer			= 5.0F;
+#ifdef WWDEBUG
 				assert(Path != NULL);
 				assert(Path->Get_Path_Vector_Length() >= Path->Get_Path_Vector_Count());
+#endif
 				Path->Get_Action_Destination (Destination);
 			}
 

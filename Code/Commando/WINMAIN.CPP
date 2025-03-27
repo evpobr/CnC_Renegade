@@ -153,7 +153,7 @@ int PASCAL WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 {
 	WWMemoryLogClass::Init();	// This switches memlog from static to dynamic allocations mode
 
-#ifdef _DEBUG
+#ifdef WWDEBUG
 	/*
 	**	Setup to track memory heap integrity and check for
 	**	memory leaks. Output is dumped to the debug string console.
