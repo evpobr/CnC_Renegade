@@ -71,8 +71,8 @@ enum
 	COL_SCORE
 };
 
-static const BUILDING_COUNT		= 5;
-static const BUILDING_SLOT_COUNT	= 6;
+static const int BUILDING_COUNT		= 5;
+static const int BUILDING_SLOT_COUNT	= 6;
 
 
 ////////////////////////////////////////////////////////////////
