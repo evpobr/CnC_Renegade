@@ -82,6 +82,23 @@ class SoundSceneClass
 {
 	public:
 
+		class AudibleInfoClass : public MultiListObjectClass, public AutoPoolClass<AudibleInfoClass, 64>
+		{
+		public:
+			AudibleInfoClass (void)
+				:	sound_obj (NULL),
+					distance2 (0) { }
+
+			AudibleInfoClass (AudibleSoundClass *obj, float dist2)
+				:	sound_obj (obj),
+					distance2 (dist2) { }
+
+			AudibleSoundClass *	sound_obj;
+			float						distance2;
+		};
+
+		typedef MultiListClass<AudibleInfoClass>	COLLECTED_SOUNDS;
+
 		//////////////////////////////////////////////////////////////////////
 		//	Friend classes
 		//////////////////////////////////////////////////////////////////////
@@ -178,23 +195,6 @@ class SoundSceneClass
 		//////////////////////////////////////////////////////////////////////
 		//	Collection methods
 		//////////////////////////////////////////////////////////////////////		
-		class AudibleInfoClass : public MultiListObjectClass, public AutoPoolClass<AudibleInfoClass, 64>
-		{
-		public:
-			AudibleInfoClass (void)
-				:	sound_obj (NULL),
-					distance2 (0) { }
-
-			AudibleInfoClass (AudibleSoundClass *obj, float dist2)
-				:	sound_obj (obj),
-					distance2 (dist2) { }
-
-			AudibleSoundClass *	sound_obj;
-			float						distance2;
-		};
-
-		typedef MultiListClass<AudibleInfoClass>	COLLECTED_SOUNDS;
-
 		virtual void			Collect_Audible_Sounds (Listener3DClass *listener, COLLECTED_SOUNDS &list);
 
 	private:

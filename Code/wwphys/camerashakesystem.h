@@ -64,15 +64,6 @@ public:
 		FLAGS_NONE = 0,
 		FLAGS_IGNOREPOSITION,
 	};
-	
-	void		Add_Camera_Shake(		const Vector3 & position,
-											float radius = 50.0f,
-											float duration = 1.5f,
-											float power = 1.0f	);
-	void		Timestep(float dt);
-	void		Update_Camera(CameraClass & camera);
-
-protected:
 
 	/**
 	** CameraShakerClass 
@@ -100,6 +91,15 @@ protected:
 		Vector3				Omega;
 		Vector3				Phi;
 	};
+
+	void		Add_Camera_Shake(		const Vector3 & position,
+											float radius = 50.0f,
+											float duration = 1.5f,
+											float power = 1.0f	);
+	void		Timestep(float dt);
+	void		Update_Camera(CameraClass & camera);
+
+protected:
 
 	MultiListClass<CameraShakerClass>	CameraShakerList;
 

@@ -112,40 +112,6 @@ class WeatherSystemClass : public RenderObjClass
 			RENDER_MODE_SURFACE_ALIGNED	// Render particle such that it looks attached to the surface of an object.
 		};
 
-		 WeatherSystemClass (PhysicsSceneClass *scene,
-									float emittersize,
-								   float emitterheight,
-								   float particledensity,
-									float particlesperunitlength,
-								   float particlewidth,
-								   float particleheight,
-								   float particlespeed,
-								   const Vector2 &pageoffset,
-									const Vector2 &pagesize,
-								   unsigned pagecount,
-									bool staticpageexists,
-									float minstatictime,
-									float maxstatictime,
-									RenderModeEnum rendermode,
-									bool decayaftercollision,
-									bool prime);
-
-		~WeatherSystemClass();
-		RenderObjClass *Clone() const
-		{
-			WWASSERT (false);
-			return (0);
-		}
-
-		void Set_Density (float density);
-		void Render (RenderInfoClass &rinfo);
-		void Get_Obj_Space_Bounding_Sphere (SphereClass &sphere) const;
-		void Get_Obj_Space_Bounding_Box (AABoxClass &box) const;
-
-		virtual bool Update (WindClass *wind, const Vector3 &cameraposition);
-
-	protected:
-
 		enum {
 			VERTICES_PER_TRIANGLE = 3,
 			MAX_IB_PARTICLE_COUNT = 2048,
@@ -185,6 +151,40 @@ class WeatherSystemClass : public RenderObjClass
 				unsigned char	 RenderMode;
 				unsigned char	 Pad [2];				// Pad structure to 4-byte multiple.
 		};
+
+		 WeatherSystemClass (PhysicsSceneClass *scene,
+									float emittersize,
+								   float emitterheight,
+								   float particledensity,
+									float particlesperunitlength,
+								   float particlewidth,
+								   float particleheight,
+								   float particlespeed,
+								   const Vector2 &pageoffset,
+									const Vector2 &pagesize,
+								   unsigned pagecount,
+									bool staticpageexists,
+									float minstatictime,
+									float maxstatictime,
+									RenderModeEnum rendermode,
+									bool decayaftercollision,
+									bool prime);
+
+		~WeatherSystemClass();
+		RenderObjClass *Clone() const
+		{
+			WWASSERT (false);
+			return (0);
+		}
+
+		void Set_Density (float density);
+		void Render (RenderInfoClass &rinfo);
+		void Get_Obj_Space_Bounding_Sphere (SphereClass &sphere) const;
+		void Get_Obj_Space_Bounding_Box (AABoxClass &box) const;
+
+		virtual bool Update (WindClass *wind, const Vector3 &cameraposition);
+
+	protected:
 
 		// Utility functions.
 		float Spawn_Count (float time) {return (ParticleDensity * EmitterSize * EmitterSize * time);}
