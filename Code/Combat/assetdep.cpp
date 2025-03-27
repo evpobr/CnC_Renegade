@@ -290,7 +290,7 @@ AssetDependencyManager::Load_Assets (ChunkLoadClass &cload)
 				break;
 
 				default:
-					WWDEBUG_SAY (("Unexpected chunk id %d found while preloading assets.\r\n", cload.Cur_Micro_Chunk_ID));
+					WWDEBUG_SAY (("Unexpected chunk id %d found while preloading assets.\r\n", cload.Cur_Micro_Chunk_ID()));
 					break;
 			}
 
