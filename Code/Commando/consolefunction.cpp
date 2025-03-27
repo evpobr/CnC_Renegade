@@ -2932,7 +2932,7 @@ public:
 			//
 			// C & S can both use id=xxxxxx format
 			//
-			char * p_id = ::strstr(input, "id=");
+			const char * p_id = ::strstr(input, "id=");
 			if (p_id != NULL) {
 				int id = -1;
 				::sscanf(p_id, "id=%d", &id);
@@ -2955,7 +2955,7 @@ public:
 			// Remaining functionality only for server.
 			//
 
-			char * p_pc = strstr(input, "percent=");
+			const char * p_pc = strstr(input, "percent=");
 			int percent = 100;
 			if (p_pc != NULL) {
 				sscanf(p_pc, "percent=%d", &percent);

@@ -2334,7 +2334,7 @@ void Session::MakeLadderRequests(void)
 					}
 
 				// The request name follows the type
-				WCHAR* widename = wcschr(*request, L':');
+				const WCHAR* widename = wcschr(*request, L':');
 				WWASSERT(widename != NULL && "Invalid Ladder Request");
 				widename++;
 

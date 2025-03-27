@@ -677,7 +677,7 @@ BuildingGameObj::Name_Prefix_Matches_This_Building (const char * name)
 
 	if (name != NULL) {
 		StringClass prefex(Get_Definition().MeshPrefix,true);
-		char * meshname = strchr(name,'.');
+		const char * meshname = strchr(name,'.');
 		if (meshname != NULL) {
 			meshname++;
 			retval = (strnicmp(meshname,prefex,strlen(prefex)) == 0);

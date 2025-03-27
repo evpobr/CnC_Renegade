@@ -1334,7 +1334,7 @@ int Build_List_From_String
 				// Copy this entry into its own string
 				//
 				StringClass entry_string = entry;
-				char *delim_start = ::strstr (entry_string, delimiter);				
+				char *delim_start = ::strstr (entry_string.Peek_Buffer(), delimiter);
 				if (delim_start != NULL) {
 					delim_start[0] = 0;
 				}
