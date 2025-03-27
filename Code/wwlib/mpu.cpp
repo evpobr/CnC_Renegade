@@ -38,7 +38,7 @@
 #include	"always.h"
 #include	"win.h"
 #include	"mpu.h"
-#include "math.h"
+#include "stdlib.h"
 #include <assert.h>
 
 typedef union {

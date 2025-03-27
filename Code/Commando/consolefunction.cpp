@@ -5313,7 +5313,7 @@ void ConsoleFunctionManager::Next_Verbose_Help_Screen(void)
 		for (	int index = 0; index < FunctionList.Count(); index++) {
 			command_number++;
 			int per_page = 57;
-			if (floor(command_number / per_page) == page_number) {
+			if (floorf(command_number / per_page) == page_number) {
 				ConsoleFunctionClass * function = FunctionList[index];
 				WWASSERT(function != NULL);
 				strcat( buffer, function->Get_Help() );
