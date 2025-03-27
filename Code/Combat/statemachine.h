@@ -59,12 +59,12 @@
 			is_begin ? On_##state##_Begin : NULL,									\
 			is_end ? On_##state##_End : NULL);	*/
 
-#define ADD_STATE_TO_MACHINE(machine, state)		\
+#define ADD_STATE_TO_MACHINE(cls, machine, state)		\
 		machine.Add_State (								\
-			On_##state##_Think,							\
-			On_##state##_Request_End,					\
-			On_##state##_Begin,							\
-			On_##state##_End);
+			&cls::On_##state##_Think,					\
+			&cls::On_##state##_Request_End,				\
+			&cls::On_##state##_Begin,					\
+			&cls::On_##state##_End);
 
 
 		//machine.Add_State (On_##state_Think, On_##state_Request_End, On_##state_Begin, On_##state_End);
