@@ -15,8 +15,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -76,14 +76,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ws2_32.lib winmm.lib"
-				OutputFile="..\..\Run\BandTest.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\BandTest.pdb"
 				GenerateMapFile="true"
-				MapFileName="..\..\Run\BandTest.map"
-				ImportLibrary=".\Release/BandTest.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -116,8 +112,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -176,14 +172,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ws2_32.lib winmm.lib"
-				OutputFile="..\..\Run\BandTestP.dll"
+				OutputFile="$(OutDir)\$(ProjectName)P.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\BandTestP.pdb"
 				GenerateMapFile="true"
-				MapFileName="..\..\Run\BandTestP.map"
-				ImportLibrary="Profile/BandTest.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -216,8 +209,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -277,14 +270,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ws2_32.lib winmm.lib"
-				OutputFile="..\..\Run\BandTestD.dll"
+				OutputFile="$(OutDir)\$(ProjectName)D.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\BandTestD.pdb"
 				GenerateMapFile="true"
-				MapFileName="..\..\Run\BandTestD.map"
-				ImportLibrary="Debug/BandTest.lib"
 				TargetMachine="1"
 			/>
 			<Tool

@@ -4,6 +4,7 @@
 	Version="8,00"
 	Name="wwlib"
 	ProjectGUID="{425467FE-F137-4027-92CE-622B585FAF5F}"
+	RootNamespace="wwlib"
 	>
 	<Platforms>
 		<Platform
@@ -15,8 +16,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -69,7 +70,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Debug\wwlib.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -92,8 +92,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -146,7 +146,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Release\wwlib.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -169,8 +168,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -220,7 +219,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Profile\wwlib.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool

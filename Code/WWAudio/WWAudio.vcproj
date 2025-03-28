@@ -15,8 +15,8 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -70,7 +70,8 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\Debug\WWAudio.lib"
+				AdditionalDependencies="mss32.lib mss32_2.lib"
+				AdditionalLibraryDirectories="..\miles6\lib\win"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -82,7 +83,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/WWAudio.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -149,7 +149,9 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="mss32.lib mss32_2.lib"
 				OutputFile="..\Libs\profile\WWAudioe.lib"
+				AdditionalLibraryDirectories="..\miles6\lib\win"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -226,7 +228,9 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
+				AdditionalDependencies="mss32.lib mss32_2.lib"
 				OutputFile="..\Libs\Debug\WWAudioe.lib"
+				AdditionalLibraryDirectories="..\miles6\lib\win"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -249,8 +253,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -305,7 +309,8 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\Release\WWAudio.lib"
+				AdditionalDependencies="mss32.lib mss32_2.lib"
+				AdditionalLibraryDirectories="..\miles6\lib\win"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -317,7 +322,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/WWAudio.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -328,8 +332,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -383,7 +387,8 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\profile\WWAudio.lib"
+				AdditionalDependencies="mss32.lib mss32_2.lib"
+				AdditionalLibraryDirectories="..\miles6\lib\win"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -395,7 +400,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/WWAudio.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

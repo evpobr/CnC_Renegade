@@ -15,8 +15,8 @@
 	<Configurations>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -68,7 +68,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Profile\SControl.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -91,8 +90,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -146,7 +145,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Debug\SControl.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -169,8 +167,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -224,7 +222,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\libs\Release\SControl.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool

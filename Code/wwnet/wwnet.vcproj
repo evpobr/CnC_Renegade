@@ -15,8 +15,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -69,7 +69,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\Release\wwnet.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -81,7 +80,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/wwnet.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -92,8 +90,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -144,7 +142,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\Profile\wwnet.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -156,7 +153,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/wwnet.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -167,8 +163,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -219,7 +215,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\Debug\wwnet.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -231,7 +226,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/wwnet.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

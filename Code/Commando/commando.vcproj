@@ -2,8 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="commando"
+	Name="Renegade"
 	ProjectGUID="{6A0E39D6-BDD5-4534-8A3F-B511201B2CE3}"
+	RootNamespace="Renegade"
 	>
 	<Platforms>
 		<Platform
@@ -15,8 +16,8 @@
 	<Configurations>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -78,8 +79,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\DirectX\lib\d3dx8.lib dinput.lib wwui.lib wwaudio.lib ..\miles6\lib\win\mss32.lib ..\miles6\lib\win\mss32_2.lib wwsaveload.lib ww3d2.lib wwdebug.lib wwlib.lib wwmath.lib wwnet.lib wwphys.lib wwutil.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib combat.lib wwtranslatedb.lib version.lib binkmovie.lib ..\BinkMovie\binkw32.lib bandtest.lib scontrol.lib"
-				OutputFile="..\..\Run\Renegade.exe"
+				AdditionalDependencies="..\DirectX\lib\d3dx8.lib dinput.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib version.lib"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../libs/release,../srsdk1x/msvc6\lib\release,../directx\lib,../umbra/lib/win32-x86"
@@ -121,8 +121,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\..\Run\"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -183,8 +183,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\DirectX\lib\d3dx8.lib dinput.lib wwui.lib wwaudio.lib ..\miles6\lib\win\mss32.lib ..\miles6\lib\win\mss32_2.lib wwsaveload.lib ww3d2.lib wwdebug.lib wwlib.lib wwmath.lib wwnet.lib wwphys.lib wwutil.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib combat.lib wwtranslatedb.lib version.lib binkmovie.lib ..\BinkMovie\binkw32.lib bandtest.lib scontrol.lib"
-				OutputFile="..\..\Run\RenegadeP.exe"
+				AdditionalDependencies="..\DirectX\lib\d3dx8.lib dinput.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib version.lib"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../libs/profile,../srsdk1x/msvc6/lib/release,../directx\lib,../umbra/lib/win32-x86"
@@ -224,8 +223,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\..\Run\"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -284,8 +283,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="..\directx\lib\d3dx8.lib dinput.lib wwui.lib ..\miles6\lib\win\mss32.lib ..\miles6\lib\win\mss32_2.lib wwsaveload.lib wwlib.lib wwmath.lib wwnet.lib wwutil.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib wwtranslatedb.lib version.lib binkmovie.lib ..\BinkMovie\binkw32.lib bandtest.lib scontrol.lib"
-				OutputFile="..\..\Run\RenegadeD.exe"
+				AdditionalDependencies="..\directx\lib\d3dx8.lib dinput.lib winmm.lib dxguid.lib dsound.lib vfw32.lib wsock32.lib version.lib"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../libs/debug,../srsdk1x/msvc6\lib\debug,../directx\lib,../umbra/lib/win32-x86"
@@ -349,6 +347,30 @@
 		<ProjectReference
 			ReferencedProjectIdentifier="{19F3E031-381C-4ADF-A83C-F1BF516EE77B}"
 			RelativePathToProject=".\combat\Combat.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{4AF841DE-5DF4-4E3D-A6F3-98646AD396A9}"
+			RelativePathToProject=".\wwui\wwui.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{ADD92C64-52D2-4D83-8435-57288F16980D}"
+			RelativePathToProject=".\wwsaveload\wwsaveload.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{6DDA51F5-6C88-4F42-ABA9-1685FEA74649}"
+			RelativePathToProject=".\WWMath\wwmath.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{1D33171C-AFAE-478A-9C9A-B314F9CCCA8B}"
+			RelativePathToProject=".\wwnet\wwnet.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{C7F15F81-1C39-4C27-8366-D6A1D534A845}"
+			RelativePathToProject=".\wwutil\wwutil.vcproj"
+		/>
+		<ProjectReference
+			ReferencedProjectIdentifier="{46884A64-7191-412A-BD28-C20ACC59B64A}"
+			RelativePathToProject=".\wwtranslatedb\wwtranslatedb.vcproj"
 		/>
 	</References>
 	<Files>

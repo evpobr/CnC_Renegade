@@ -89,8 +89,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\Release"
-			IntermediateDirectory=".\Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -143,7 +143,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\release\wwdebug.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -155,7 +154,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/wwdebug.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -166,8 +164,8 @@
 		</Configuration>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory=".\Profile"
-			IntermediateDirectory=".\Profile"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -217,7 +215,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\profile\wwdebug.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -229,7 +226,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/wwdebug.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -240,8 +236,8 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\Debug"
-			IntermediateDirectory=".\Debug"
+			OutputDirectory="..\Libs\$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
 			UseOfMFC="0"
@@ -294,7 +290,6 @@
 			/>
 			<Tool
 				Name="VCLibrarianTool"
-				OutputFile="..\Libs\debug\wwdebug.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -306,7 +301,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/wwdebug.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
