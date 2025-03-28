@@ -284,7 +284,7 @@ void StaticShadowTexMgrClass::Remove_Shadow_Texture
 {
 	for (int i=0; i<ShadowTextures.Count(); i++) {
 		if (ShadowTextures[i].Texture == tex) {
-			ShadowTextures.Delete(i);
+			ShadowTextures.Delete_By_Index(i);
 			return;
 		}
 	}

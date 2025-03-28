@@ -701,7 +701,7 @@ void	VehicleGameObj::Destroy_Transitions( void )
 	HasExitTransitions = false;
 	while ( TransitionInstances.Count() ) {
   		TransitionManager::Destroy( TransitionInstances[0] );
-  		TransitionInstances.Delete( 0 );
+  		TransitionInstances.Delete_By_Index( 0 );
 	}
 
 	// They get put in a list, so flush the list.
@@ -2015,7 +2015,7 @@ void	VehicleGameObj::Remove_Transitions( TransitionDataClass::StyleType transiti
 	for ( int i = 0; i < TransitionInstances.Count(); i++ ) {
 		if ( TransitionInstances[i]->Get_Type() == transition_type ) {
 			TransitionManager::Destroy( TransitionInstances[i] );
-			TransitionInstances.Delete( i );
+			TransitionInstances.Delete_By_Index( i );
 			i--;
 		}
 	}

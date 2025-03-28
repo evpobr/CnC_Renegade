@@ -180,7 +180,7 @@ PathMgrClass::Request_Path_Object (void)
 		// little more efficient when working with DynamicVectorClass objects.
 		//
 		path_object = AvailablePathList[avail_count - 1];
-		AvailablePathList.Delete (avail_count - 1);
+		AvailablePathList.Delete_By_Index (avail_count - 1);
 	} else {
 
 		//
@@ -240,7 +240,7 @@ PathMgrClass::Return_Path_Object (PathSolveClass *path)
 				//
 				//	Remove the object from the used list
 				//
-				UsedPathList.Delete (used_index);
+				UsedPathList.Delete_By_Index (used_index);
 
 				//
 				//	Add the path object to our list (its assumed we

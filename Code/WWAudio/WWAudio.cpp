@@ -586,7 +586,7 @@ WWAudioClass::Free_Cache_Space (int bytes)
 				REF_PTR_RELEASE (info.buffer);
 
 				// Remove this entry from the hash table
-				m_CachedBuffers[hash_index].Delete (index);
+				m_CachedBuffers[hash_index].Delete_By_Index (index);
 				index --;
 			}
 		}
@@ -1305,7 +1305,7 @@ WWAudioClass::Free_Completed_Sounds (void)
 							//
 							// Free our hold on this sound object
 							//
-							m_Playlist[page].Delete (play_index);
+							m_Playlist[page].Delete_By_Index (play_index);
 							REF_PTR_RELEASE (sound_obj);
 							found = true;
 						}
@@ -3741,7 +3741,7 @@ WWAudioClass::Pop_Active_Sound_Page (void)
 {
 	if (m_PageStack.Count () > 0) {
 		SOUND_PAGE new_page = m_PageStack[m_PageStack.Count () - 1];
-		m_PageStack.Delete (m_PageStack.Count () - 1);
+		m_PageStack.Delete_By_Index (m_PageStack.Count () - 1);
 		Set_Active_Sound_Page (new_page);
 	}
 

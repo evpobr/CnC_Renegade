@@ -177,7 +177,7 @@ void Curve3DClass::Remove_Key(int i)
 {
 	assert(i >= 0);
 	assert(i < Keys.Count());
-	Keys.Delete(i);	
+	Keys.Delete_By_Index(i);	
 }
 
 void Curve3DClass::Clear_Keys(void)
@@ -425,7 +425,7 @@ void Curve1DClass::Remove_Key(int i)
 {
 	assert(i >= 0);
 	assert(i < Keys.Count());
-	Keys.Delete(i);	
+	Keys.Delete_By_Index(i);	
 }
 
 void Curve1DClass::Clear_Keys(void)

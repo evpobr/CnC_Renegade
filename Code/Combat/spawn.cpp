@@ -753,7 +753,7 @@ void	SpawnManager::Add_Spawner( SpawnerClass * spawner )
 
 void	SpawnManager::Remove_Spawner( SpawnerClass * spawner )
 {
-	SpawnerList.Delete( spawner );
+	SpawnerList.Delete_By_Ref( spawner );
 }
 
 void	SpawnManager::Remove_All_Spawners( void )

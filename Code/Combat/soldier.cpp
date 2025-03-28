@@ -4667,7 +4667,7 @@ void	SoldierGameObj::Reset_RenderObjs( void )
 {
 	while ( RenderObjList.Count() ) {
 		RenderObjList[0]->Release_Ref();
-		RenderObjList.Delete( 0 );
+		RenderObjList.Delete_By_Index( 0 );
 	}
 }
 

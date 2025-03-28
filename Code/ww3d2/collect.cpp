@@ -541,7 +541,7 @@ int CollectionClass::Remove_Sub_Object(RenderObjClass * robj)
 			SubObjects[i]->Set_Container(NULL);
 			SubObjects[i]->Set_Transform(tm);
 			SubObjects[i]->Release_Ref();
-			res = SubObjects.Delete(i);
+			res = SubObjects.Delete_By_Index(i);
 			break;
 		}
 	}

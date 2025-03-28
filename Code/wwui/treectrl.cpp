@@ -1126,7 +1126,7 @@ TreeCtrlClass::Delete_Item (TreeItemClass *item)
 		//
 		index = ItemList.ID (item);
 		if (index != -1) {
-			ItemList.Delete (index);
+			ItemList.Delete_By_Index (index);
 		}
 	}
 
@@ -1483,7 +1483,7 @@ TreeItemClass::Remove_Child (TreeItemClass *child)
 {
 	int index = ChildList.ID (child);
 	if (index != -1) {
-		ChildList.Delete (index);
+		ChildList.Delete_By_Index (index);
 	}
 
 	return ;

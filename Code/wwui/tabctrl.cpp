@@ -878,7 +878,7 @@ TabCtrlClass::Remove_Tab (int index)
 	Parent->Remove_Child_Dialog (TabList[index]);
 	TabList[index]->End_Dialog ();
 	REF_PTR_RELEASE (TabList[index]);
-	TabList.Delete (index);
+	TabList.Delete_By_Index (index);
 	return ;
 }
 

@@ -379,11 +379,11 @@ void 	Powerup_Reset( void )
 {
 	while ( LeftPowerupIconList.Count() ) {
 		delete LeftPowerupIconList[0];
-		LeftPowerupIconList.Delete(0);
+		LeftPowerupIconList.Delete_By_Index(0);
 	}
 	while ( RightPowerupIconList.Count() ) {
 		delete RightPowerupIconList[0];
-		RightPowerupIconList.Delete(0);
+		RightPowerupIconList.Delete_By_Index(0);
 	}
 }
 
@@ -413,7 +413,7 @@ static	void	Powerup_Update( void )
 			LeftAnimateTimer = 0;
 			if ( LeftPowerupIconList.Count() ) {
 				delete LeftPowerupIconList[0];
-				LeftPowerupIconList.Delete(0);
+				LeftPowerupIconList.Delete_By_Index(0);
 			}
 		}
 	} else {
@@ -426,7 +426,7 @@ static	void	Powerup_Update( void )
 			RightAnimateTimer = 0;
 			if ( RightPowerupIconList.Count() ) {
 				delete RightPowerupIconList[0];
-				RightPowerupIconList.Delete(0);
+				RightPowerupIconList.Delete_By_Index(0);
 			}
 		}
 	} else {
@@ -2292,7 +2292,7 @@ static	void	Info_Editor_Shutdown( void )
 {
 	while ( InfoEditorFieldList.Count() > 0 ) {
 		Debug_Say(( "Vector2 %s( %d, %d );\n", InfoEditorFieldList[0].Name, (int)InfoEditorFieldList[0].Value->U, (int)InfoEditorFieldList[0].Value->V ));
-		InfoEditorFieldList.Delete(0);
+		InfoEditorFieldList.Delete_By_Index(0);
 	}
 }
 

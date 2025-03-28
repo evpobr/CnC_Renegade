@@ -251,7 +251,7 @@ public:
 	//	Child access
 	//	
 	void				Add_Child (TreeItemClass *child)	{ ChildList.Add (child); NeedsChildren = false; }
-	void				Remove_Child (int index)			{ ChildList.Delete (index); }
+	void				Remove_Child (int index)			{ ChildList.Delete_By_Index (index); }
 	void				Remove_Child (TreeItemClass *child);
 
 	bool				Needs_Children (void) const		{ return NeedsChildren; }

@@ -108,7 +108,7 @@ SocketHandlerClass::SocketHandlerClass(void)
 SocketHandlerClass::~SocketHandlerClass(void)
 {
 	Close();
-	AllSocketHandlers.Delete(this);
+	AllSocketHandlers.Delete_By_Ref(this);
 }
 
 
@@ -185,7 +185,7 @@ bool SocketHandlerClass::Open(int inport, int outport)
 	*/
 	while (LocalAddresses.Count()) {
 		delete LocalAddresses[0];
-		LocalAddresses.Delete(0);
+		LocalAddresses.Delete_By_Index(0);
 	}
 
 	/*
@@ -279,7 +279,7 @@ void SocketHandlerClass::Close(void)
 	*/
 	while (LocalAddresses.Count()) {
 		delete LocalAddresses[0];
-		LocalAddresses.Delete(0);
+		LocalAddresses.Delete_By_Index(0);
 	}
 
 	if (Socket != INVALID_SOCKET) {
@@ -320,7 +320,7 @@ void SocketHandlerClass::Discard_In_Buffers(void)
 			packet->InUse = false;
 			InBuffersUsed--;
 		}
-		InBuffers.Delete(0);
+		InBuffers.Delete_By_Index(0);
 	}
 	InBuffersUsed = 0;
 	InBufferArrayPos = 0;
@@ -353,7 +353,7 @@ void SocketHandlerClass::Discard_Out_Buffers(void)
 			packet->InUse = false;
 			OutBuffersUsed--;
 		}
-		OutBuffers.Delete(0);
+		OutBuffers.Delete_By_Index(0);
 	}
 	OutBuffersUsed = 0;
 	OutBufferArrayPos = 0;
@@ -513,7 +513,7 @@ int SocketHandlerClass::Read(void *buffer, int buffer_len, void *address, unsign
 	/*
 	** Delete the temporary storage for the packet now that it is being passed to the game.
 	*/
-	InBuffers.Delete(packetnum);
+	InBuffers.Delete_By_Index(packetnum);
 	if (packet->IsAllocated) {
 		delete packet;
 	}else{
@@ -1036,7 +1036,7 @@ void SocketHandlerClass::Service(void)
 		/*
 		** Delete the sent packet.
 		*/
-		OutBuffers.Delete(0);
+		OutBuffers.Delete_By_Index(0);
 		if (packet->IsAllocated) {
 			delete packet;
 		}else{

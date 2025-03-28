@@ -469,7 +469,7 @@ DropDownCtrlClass::Delete_String (int index)
 		//
 		//	Delete the entry
 		//
-		EntryList.Delete (index);
+		EntryList.Delete_By_Index (index);
 		Set_Curr_Sel (min (CurrSel, EntryList.Count () - 1));
 		Set_Dirty ();
 	}

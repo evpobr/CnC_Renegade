@@ -195,7 +195,7 @@ ConversationMgrClass::Reset_Active_Conversations (void)
 	//
 	while (ActiveConversationList.Count () > 0) {
 		ActiveConversationClass *active_conversation = ActiveConversationList[0];
-		ActiveConversationList.Delete (0);
+		ActiveConversationList.Delete_By_Index (0);
 		if (active_conversation != NULL) {
 			active_conversation->Stop_Conversation (ACTION_COMPLETE_CONVERSATION_INTERRUPTED);
 		}
@@ -869,7 +869,7 @@ ConversationMgrClass::Test_Conversation
 					//
 					//	Remove this orator from the buddy list
 					//
-					available_buddy_list.Delete (index);
+					available_buddy_list.Delete_By_Index (index);
 					found = true;					
 					break;
 				}				
@@ -1069,7 +1069,7 @@ ConversationMgrClass::Think (void)
 				//
 				//	Remove the conversation from the list
 				//
-				ActiveConversationList.Delete (index);
+				ActiveConversationList.Delete_By_Index (index);
 				REF_PTR_RELEASE (active_conversation);
 			} else {
 				release_key_conv = true;
@@ -1097,7 +1097,7 @@ ConversationMgrClass::Think (void)
 		//	Remove this conversation from our control (if necessary)
 		//
 		if (remove_from_list) {
-			ActiveConversationList.Delete (index);
+			ActiveConversationList.Delete_By_Index (index);
 			REF_PTR_RELEASE (active_conversation);
 			index --;
 			count --;
@@ -1198,7 +1198,7 @@ ConversationMgrClass::Remove_Conversation (ConversationClass *conversation)
 			//
 			//	Remove this conversation from the list
 			//
-			ConversationList[cat_index].Delete (index);
+			ConversationList[cat_index].Delete_By_Index (index);
 			conversation->Set_ID (0);
 			REF_PTR_RELEASE (conversation);
 			break;

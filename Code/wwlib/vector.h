@@ -512,10 +512,10 @@ class DynamicVectorClass : public VectorClass<T>
 		bool Insert(int index,T const & object);
 
 		// Delete object just like this from vector.
-		bool Delete(T const & object);
+		bool Delete_By_Ref(T const & object);
 
 		// Delete object at this vector index.
-		bool Delete(int index);
+		bool Delete_By_Index(int index);
 
 		// Deletes all objects in the vector.
 		void Delete_All(void);
@@ -816,11 +816,11 @@ bool DynamicVectorClass<T>::Insert(int index,T const & object)
  *   03/10/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
-bool DynamicVectorClass<T>::Delete(T const & object)
+bool DynamicVectorClass<T>::Delete_By_Ref(T const & object)
 {
 	int id = ID(object);
 	if (id != -1) {
-		return(Delete(id));
+		return(Delete_By_Index(id));
 	}
 	return(false);
 }
@@ -844,7 +844,7 @@ bool DynamicVectorClass<T>::Delete(T const & object)
  *   03/10/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
-bool DynamicVectorClass<T>::Delete(int index)
+bool DynamicVectorClass<T>::Delete_By_Index(int index)
 {
 	if (index < ActiveCount) {
 		ActiveCount--;

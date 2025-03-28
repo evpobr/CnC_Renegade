@@ -647,7 +647,7 @@ void SystemSettings::Shutdown( void )
 	*/
 	while (SettingList.Count()) {
 		delete SettingList[0];
-		SettingList.Delete(0);
+		SettingList.Delete_By_Index(0);
 	}
 }
 

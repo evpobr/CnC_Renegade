@@ -5190,7 +5190,7 @@ void	ConsoleFunctionManager::Shutdown( void )
 {
 	while ( FunctionList.Count() ) {
 		delete FunctionList[ FunctionList.Count()-1 ];
-		FunctionList.Delete( FunctionList.Count()-1 );
+		FunctionList.Delete_By_Index( FunctionList.Count()-1 );
 	}
 }
 

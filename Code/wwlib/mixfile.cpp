@@ -285,7 +285,7 @@ MixFileFactoryClass::Delete_File (const char *filename)
 	//
 	for (int list_index = 0; list_index < FilenameList.Count (); list_index ++) {
 		if (FilenameList[list_index].Compare_No_Case (filename) == 0) {
-			FilenameList.Delete (list_index);
+			FilenameList.Delete_By_Index (list_index);
 			IsModified = true;
 			break;
 		}
@@ -344,7 +344,7 @@ MixFileFactoryClass::Flush_Changes (void)
 				//
 				for (int temp_index = 0; temp_index < PendingAddFileList.Count (); temp_index ++) {
 					if (filename.Compare_No_Case (PendingAddFileList[temp_index].Filename) == 0) {
-						PendingAddFileList.Delete (temp_index);
+						PendingAddFileList.Delete_By_Index (temp_index);
 						break;
 					}
 				}

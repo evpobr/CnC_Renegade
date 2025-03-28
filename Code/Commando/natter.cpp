@@ -1007,7 +1007,7 @@ bool WOLNATInterfaceClass::Get_Private_Game_Options(WOL::User *user, char *optio
 		strcpy(options_buffer, options->Options);
 
 		delete IncomingOptions[0];
-		IncomingOptions.Delete(0);
+		IncomingOptions.Delete_By_Index(0);
 		return(true);
 	}
 
@@ -1103,7 +1103,7 @@ void WOLNATInterfaceClass::Service(void)
 			SessionPtr->GetChatObject()->RequestPrivateGameOptions(&options->User, options->Options);
 		fw_assert(res == S_OK);
 
-		OutgoingOptions.Delete(0);
+		OutgoingOptions.Delete_By_Index(0);
 		delete options;
 	}
 
@@ -1454,7 +1454,7 @@ bool WOLNATInterfaceClass::Get_Packet(char *packet_buffer, int buffer_size, IPAd
 		strncpy(packet_buffer, (char*)(packet->Payload), buffer_size-1);
 		address = packet->FromAddress;
 		delete packet;
-		IncomingPackets.Delete(0);
+		IncomingPackets.Delete_By_Index(0);
 		return(true);
 	}
 

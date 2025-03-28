@@ -78,7 +78,7 @@ int CardinalSpline3DClass::Add_Key(const Vector3 & point,float t)
 
 void CardinalSpline3DClass::Remove_Key(int i)
 {
-	Tightness.Delete(i);
+	Tightness.Delete_By_Index(i);
 	HermiteSpline3DClass::Remove_Key(i);
 }
 
@@ -228,7 +228,7 @@ int CardinalSpline1DClass::Add_Key(float point,float t)
 
 void CardinalSpline1DClass::Remove_Key(int i)
 {
-	Tightness.Delete(i);
+	Tightness.Delete_By_Index(i);
 	HermiteSpline1DClass::Remove_Key(i);
 }
 

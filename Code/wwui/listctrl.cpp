@@ -1465,7 +1465,7 @@ ListCtrlClass::Remove_Column (int index)
 	//
 	//	Remove the column from the list
 	//
-	ColList.Delete (index);
+	ColList.Delete_By_Index (index);
 	Set_Dirty ();
 	return true;
 }
@@ -1534,7 +1534,7 @@ ListCtrlClass::Delete_Entry (int index)
 	//
 	if (index >= 0 && index < RowInfoList.Count ()) {
 		delete RowInfoList[index];
-		RowInfoList.Delete (index);
+		RowInfoList.Delete_By_Index (index);
 	}
 
 	//
@@ -2436,7 +2436,7 @@ ListColumnClass::Delete_Entry (int index)
 	//
 	if (index >= 0 && index < EntryList.Count ()) {
 		delete EntryList[index];
-		EntryList.Delete (index);
+		EntryList.Delete_By_Index (index);
 	}
 
 	return retval;
@@ -2482,7 +2482,7 @@ ListColumnClass::Move_Entry (int old_index, int new_index)
 	//
 	ListEntryClass *old_entry = EntryList[old_index];
 	EntryList.Insert (new_index, old_entry);
-	EntryList.Delete (old_index);
+	EntryList.Delete_By_Index (old_index);
 	return ;
 }
 

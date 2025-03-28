@@ -87,7 +87,7 @@ AudioCallbackClass::On_UnRegistered (SoundSceneObjClass *sound)
 {
 	int index = SoundList.ID (sound);
 	if (index != -1) {
-		SoundList.Delete (index);
+		SoundList.Delete_By_Index (index);
 	}
 
 	return ;

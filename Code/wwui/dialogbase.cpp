@@ -1335,7 +1335,7 @@ DialogBaseClass::Remove_Control (DialogControlClass *control)
 		//
 		index = ControlList.ID (control);
 		if (index != -1) {
-			ControlList.Delete (index);
+			ControlList.Delete_By_Index (index);
 		}
 
 		//
@@ -1466,7 +1466,7 @@ DialogBaseClass::Remove_Child_Dialog (ChildDialogClass *child)
 		//
 		child->Set_Parent_Dialog (NULL);
 		child->Release_Ref ();
-		ControlList.Delete (index);
+		ControlList.Delete_By_Index (index);
 	}
 
 	//

@@ -285,7 +285,7 @@ void VisOptimizationContextClass::Combine_Sector_Tables(int sector_id_0,int sect
 	** Merge the second table into the first.
 	*/
 	SectorTables[id0].Table->Merge(*(SectorTables[id1].Table));
-	SectorTables.Delete(id1);
+	SectorTables.Delete_By_Index(id1);
 
 #if 0
 	/*
@@ -319,7 +319,7 @@ void VisOptimizationContextClass::Combine_Object_Tables(int object_id_0,int obje
 	** Merge the second table into the first
 	*/
 	ObjectTables[id0].Table->Merge(*(ObjectTables[id1].Table));
-	ObjectTables.Delete(id1);
+	ObjectTables.Delete_By_Index(id1);
 
 #if 0
 	/*

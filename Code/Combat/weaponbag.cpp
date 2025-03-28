@@ -61,7 +61,7 @@ WeaponBagClass::~WeaponBagClass( void )
 {
 	while ( WeaponList.Count() ) {
 		delete	WeaponList[0];
-		WeaponList.Delete( 0 );
+		WeaponList.Delete_By_Index( 0 );
 	}
 }
 
@@ -163,7 +163,7 @@ void	WeaponBagClass::Remove_Weapon( int index )
 	//
 	if ( index >= 0 && index < WeaponList.Count() ) {
 		delete	WeaponList[index];
-		WeaponList.Delete( index );		
+		WeaponList.Delete_By_Index( index );		
 	}
 
 	return ;
@@ -178,7 +178,7 @@ void	WeaponBagClass::Clear_Weapons( void )
 	while ( WeaponList.Count() > 1 ) {
 		int index = WeaponList.Count()-1;
 		delete WeaponList[index];
-		WeaponList.Delete( index );		
+		WeaponList.Delete_By_Index( index );		
 	}
 
 	Select_Index( 0 );

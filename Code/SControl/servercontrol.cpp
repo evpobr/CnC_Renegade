@@ -164,7 +164,7 @@ void ServerControlClass::Stop_Listening(void)
 	}
 	while (RemoteControllers.Count()) {
 		delete RemoteControllers[0];
-		RemoteControllers.Delete(0);
+		RemoteControllers.Delete_By_Index(0);
 	}
 }
 
@@ -384,7 +384,7 @@ void ServerControlClass::Remove_Remote_Control(unsigned long ip, unsigned short 
 		control = RemoteControllers[i];
 		if (control->IP == ip && control->Port == port) {
 			delete control;
-			RemoteControllers.Delete(i);
+			RemoteControllers.Delete_By_Index(i);
 			break;
 		}
 	}

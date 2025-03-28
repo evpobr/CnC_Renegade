@@ -1701,7 +1701,7 @@ bool Is_Options_Spammer(char *user_name, int &count)
 		for (int i=OptionsTracking.Count() - 1 ; i >= 0 ; i--) {
 			if (OptionsTracking[i]->Times.Count() == 0) {
 				delete OptionsTracking[i];
-				OptionsTracking.Delete(i);
+				OptionsTracking.Delete_By_Index(i);
 				index = i;
 				break;
 			}
@@ -1727,7 +1727,7 @@ bool Is_Options_Spammer(char *user_name, int &count)
 		int c = OptionsTracking[index]->Times.Count();
 		for (int i=0 ; i<c ; i++) {
 			if (OptionsTracking[index]->Times[0] < old_time) {
-				OptionsTracking[index]->Times.Delete(0);
+				OptionsTracking[index]->Times.Delete_By_Index(0);
 			} else {
 				break;
 			}
@@ -1742,7 +1742,7 @@ bool Is_Options_Spammer(char *user_name, int &count)
 	} else {
 		while (OptionsTracking.Count()) {
 			delete OptionsTracking[0];
-			OptionsTracking.Delete(0);
+			OptionsTracking.Delete_By_Index(0);
 		}
 	}
 	

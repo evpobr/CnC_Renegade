@@ -294,7 +294,7 @@ ScriptableGameObj::~ScriptableGameObj( void )
 	*/
 	while (ObserverTimerList.Count()) {
 		delete ObserverTimerList[0];
-		ObserverTimerList.Delete(0);
+		ObserverTimerList.Delete_By_Index(0);
 	}
 
 	/*
@@ -302,7 +302,7 @@ ScriptableGameObj::~ScriptableGameObj( void )
 	*/
 	while (CustomTimerList.Count()) {
 		delete CustomTimerList[0];
-		CustomTimerList.Delete(0);
+		CustomTimerList.Delete_By_Index(0);
 	}
 }
 
@@ -661,7 +661,7 @@ void	ScriptableGameObj::Post_Think( void )
 			}
 
 			delete ObserverTimerList[i];
-			ObserverTimerList.Delete( i );
+			ObserverTimerList.Delete_By_Index( i );
 		}
 	}
 
@@ -676,7 +676,7 @@ void	ScriptableGameObj::Post_Think( void )
 			}
 
 			delete CustomTimerList[i];
-			CustomTimerList.Delete( i );
+			CustomTimerList.Delete_By_Index( i );
 		}
 	}
 }

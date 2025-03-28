@@ -217,7 +217,7 @@ void 	RadarManager::Shutdown()
 	while ( Blips.Count() > 0 ) {
 		int index = Blips.Count() - 1;
 		delete Blips[ index ];
-		Blips.Delete( index );
+		Blips.Delete_By_Index( index );
 	}
 
 	for (int i=0;i<8;++i) {
@@ -632,7 +632,7 @@ void	RadarManager::Clear_Marker( int id )
 {
 	for ( int i = 0; i < Markers.Count(); i++ ) {
 		if ( Markers[i].ID == id ) {
-			Markers.Delete( i );
+			Markers.Delete_By_Index( i );
 			i--;
 		}
 	}

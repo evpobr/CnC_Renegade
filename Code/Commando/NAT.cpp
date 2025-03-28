@@ -369,7 +369,7 @@ unsigned long FirewallHelperClass::NAT_Thread_Main_Loop(void)
 					ThreadState = ThreadQueue[0].ThreadAction;
 					ThreadEvent = ThreadQueue[0].ThreadEvent;
 					//delete ThreadQueue[0];
-					ThreadQueue.Delete(0);
+					ThreadQueue.Delete_By_Index(0);
 				} else {
 					if (WOLNATInterface.Am_I_Server()) {
 						if (ClientQueue.Count()) {
@@ -2275,7 +2275,7 @@ void FirewallHelperClass::Cleanup_Client_Queue(void)
 	while (ClientQueueRemoveList.Count()) {
 		if (Remove_Player_From_Negotiation_Queue_If_Mutex_Available(ClientQueueRemoveList[0]->Name)) {
 			delete ClientQueueRemoveList[0];
-			ClientQueueRemoveList.Delete(0);
+			ClientQueueRemoveList.Delete_By_Index(0);
 		} else {
 			break;
 		}
@@ -2356,7 +2356,7 @@ bool FirewallHelperClass::Remove_Player_From_Negotiation_Queue(char *player_name
 		if (stricmp(clientptr->Name, player_name) == 0) {
 			WWDEBUG_SAY(("FirewallHelper - Removed %s from ClientQueue\n", clientptr->Name));
 			delete clientptr;
-			ClientQueue.Delete(i);
+			ClientQueue.Delete_By_Index(i);
 			i--;
 			retcode = true;
 		}
@@ -2743,7 +2743,7 @@ int FirewallHelperClass::Negotiate_Port(void)
 		LastOptionsFromClient = TIMEGETTIME();
 
 		delete client;
-		ClientQueue.Delete(0);
+		ClientQueue.Delete_By_Index(0);
 
 		WWDEBUG_SAY(("FirewallHelper - Removed next player %s from client queue\n", PlayersName));
 
@@ -3615,7 +3615,7 @@ bool FirewallHelperClass::Get_Local_Chat_Connection_Address(void)
 		** Free the memory.
 		*/
 		delete connection_list[0];
-		connection_list.Delete(0);
+		connection_list.Delete_By_Index(0);
 	}
 
 	if (found) {

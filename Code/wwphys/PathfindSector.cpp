@@ -233,7 +233,7 @@ PathfindSectorClass::Remove_Portal (uint32 portal_id)
 	//
 	for (int index = 0; index < m_PortalList.Count (); index ++) {
 		if (portal_id == m_PortalList[index]) {
-			m_PortalList.Delete (index);
+			m_PortalList.Delete_By_Index (index);
 			break;
 		}
 	}

@@ -1002,7 +1002,7 @@ void Unregister_Thread_ID(unsigned long thread_id, char *thread_name)
 		if (strcmp(thread_name, ThreadList[i]->ThreadName) == 0) {
 			assert(ThreadList[i]->ThreadID == thread_id);
 			delete ThreadList[i];
-			ThreadList.Delete(i);
+			ThreadList.Delete_By_Index(i);
 			return;
 		}
 	}

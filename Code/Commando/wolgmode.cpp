@@ -345,8 +345,8 @@ void WolGameModeClass::Think(void)
 			//
 			for (int i = IdleKickNameList.Count() - 1 ; i >= 0 ; i--) {
 				if (time - IdleKickTimeList[i] > _kick_history_persist_time || time < IdleKickTimeList[i]) {
-					IdleKickTimeList.Delete(i);
-					IdleKickNameList.Delete(i);
+					IdleKickTimeList.Delete_By_Index(i);
+					IdleKickNameList.Delete_By_Index(i);
 				}
 			}
 

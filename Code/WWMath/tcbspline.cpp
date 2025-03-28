@@ -80,7 +80,7 @@ int TCBSpline3DClass::Add_Key(const Vector3 & point,float t)
 void TCBSpline3DClass::Remove_Key(int i)
 {
 	HermiteSpline3DClass::Remove_Key(i);
-	Params.Delete(i);
+	Params.Delete_By_Index(i);
 }
 
 void TCBSpline3DClass::Clear_Keys(void)

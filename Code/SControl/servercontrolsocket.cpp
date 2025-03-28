@@ -255,7 +255,7 @@ void ServerControlSocketClass::Discard_In_Buffers(void)
 			packet->InUse = false;
 			InBuffersUsed--;
 		}
-		InBuffers.Delete(0);
+		InBuffers.Delete_By_Index(0);
 	}
 	InBuffersUsed = 0;
 	InBufferArrayPos = 0;
@@ -288,7 +288,7 @@ void ServerControlSocketClass::Discard_Out_Buffers(void)
 			packet->InUse = false;
 			OutBuffersUsed--;
 		}
-		OutBuffers.Delete(0);
+		OutBuffers.Delete_By_Index(0);
 	}
 	OutBuffersUsed = 0;
 	OutBufferArrayPos = 0;
@@ -436,7 +436,7 @@ int ServerControlSocketClass::Read(void *buffer, int buffer_len, void *address, 
 	/*
 	** Delete the temporary storage for the packet now that it is being passed to the game.
 	*/
-	InBuffers.Delete(packetnum);
+	InBuffers.Delete_By_Index(packetnum);
 	if (packet->IsAllocated) {
 		delete packet;
 	}else{
@@ -907,7 +907,7 @@ void ServerControlSocketClass::Service(void)
 		/*
 		** Delete the sent packet.
 		*/
-		OutBuffers.Delete(0);
+		OutBuffers.Delete_By_Index(0);
 		if (packet->IsAllocated) {
 			delete packet;
 		}else{

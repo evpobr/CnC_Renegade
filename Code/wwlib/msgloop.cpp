@@ -197,7 +197,7 @@ void Add_Modeless_Dialog(HWND dialog)
  *=============================================================================================*/
 void Remove_Modeless_Dialog(HWND dialog)
 {
-	_ModelessDialogs.Delete(dialog);
+	_ModelessDialogs.Delete_By_Ref(dialog);
 }
 
 
@@ -247,7 +247,7 @@ void Remove_Accelerator(HACCEL accelerator)
 {
 	for (int index = 0; index < _Accelerators.Count(); index++) {
 		if (_Accelerators[index].Accelerator == accelerator) {
-			_Accelerators.Delete(index);
+			_Accelerators.Delete_By_Index(index);
 			break;
 		}
 	}

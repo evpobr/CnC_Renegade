@@ -310,7 +310,7 @@ void	TransitionGameObj::Destroy_Transitions( void )
 {
 	while ( TransitionInstances.Count() ) {
   		TransitionManager::Destroy( TransitionInstances[0] );
-  		TransitionInstances.Delete( 0 );
+  		TransitionInstances.Delete_By_Index( 0 );
 	}
 
 	// They get put in a list, so flush the list.

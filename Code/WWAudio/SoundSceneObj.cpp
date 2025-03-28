@@ -434,7 +434,7 @@ SoundSceneObjClass::Unregister_Sound_Object (SoundSceneObjClass *sound_obj)
 		//
 		//	Remove the object from the list
 		//
-		m_GlobalSoundList.Delete (index);
+		m_GlobalSoundList.Delete_By_Index (index);
 	}
 
 	return ;

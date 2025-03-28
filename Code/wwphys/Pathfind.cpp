@@ -333,7 +333,7 @@ PathfindClass::Add_Temporary_Portal
 					//
 					//	Remove the portal from our list and free our hold on it
 					//
-					m_TemporaryPortalList.Delete (0);
+					m_TemporaryPortalList.Delete_By_Index (0);
 					old_portal->Release_Ref ();
 				}
 			}
@@ -1028,7 +1028,7 @@ PathfindClass::Remove_Waypath (WaypathClass *waypath)
 			//
 			if (curr_waypath == waypath) {
 				REF_PTR_RELEASE (waypath);
-				m_WaypathList.Delete (index);
+				m_WaypathList.Delete_By_Index (index);
 				retval = true;
 			}
 		}		
@@ -1479,7 +1479,7 @@ PathfindClass::Free_Waypath_Sectors_And_Portals (void)
 			//	Free the sector and remove it from the list
 			//
 			REF_PTR_RELEASE (sector);
-			m_SectorList.Delete (index);
+			m_SectorList.Delete_By_Index (index);
 			index --;
 		}
 	}

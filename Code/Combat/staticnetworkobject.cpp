@@ -96,7 +96,7 @@ StaticNetworkObjectClass::~StaticNetworkObjectClass (void)
 	//
 	int index = StaticNetworkObjectList.ID (this);
 	if (index != -1) {
-		StaticNetworkObjectList.Delete (index);
+		StaticNetworkObjectList.Delete_By_Index (index);
 	}
 
 	return ;

@@ -445,7 +445,7 @@ void WW3DAssetManager::Free_Assets(void)
 	while (count-- > 0) {
 
 		PrototypeClass * proto = Prototypes[count];
-		Prototypes.Delete(count);
+		Prototypes.Delete_By_Index(count);
 
 		if (proto != NULL) {
 			delete proto;
@@ -1465,7 +1465,7 @@ void WW3DAssetManager::Remove_Prototype(PrototypeClass *proto)
 		}
 
 		// Now remove this from our vector-array of prototypes
-		Prototypes.Delete (proto);
+		Prototypes.Delete_By_Ref (proto);
 	}
 
 	return;

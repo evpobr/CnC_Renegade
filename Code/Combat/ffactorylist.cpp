@@ -81,7 +81,7 @@ void	FileFactoryListClass::Remove_FileFactory( FileFactoryClass * factory )
 		//
 		if (FactoryList[index] == factory) {
 			FactoryList.Delete (index);
-			FactoryNameList.Delete (index);
+			FactoryNameList.Delete_By_Index (index);
 			Reset_Search_Start ();
 			break;
 		}
@@ -111,7 +111,7 @@ FileFactoryClass *FileFactoryListClass::Remove_FileFactory(void)
 	if (FactoryList.Count()) {
 		factory = FactoryList[0];
 		FactoryList.Delete(0);
-		FactoryNameList.Delete(0);
+		FactoryNameList.Delete_By_Index(0);
 	}
 
 	Reset_Search_Start ();

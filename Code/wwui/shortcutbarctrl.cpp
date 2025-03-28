@@ -629,7 +629,7 @@ ShortcutBarCtrlClass::Remove_Button (int ctrl_id)
 		//	Remove the entry from the list...
 		//
 		if (ShortcutList[index].ctrl_id == ctrl_id) {
-			ShortcutList.Delete (index);
+			ShortcutList.Delete_By_Index (index);
 			Set_Dirty ();
 			break;
 		}

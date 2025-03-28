@@ -1431,7 +1431,7 @@ MPLanHostMapCycleOptionsTabClass::Fill_Map_Ctrls (void)
 		map_name.Convert_From (ascii_map_name);
 
 		if (map_name.Get_Length () > 0 && List_Contains(MapList, map_name)) {
-			MapList.Delete (map_name);
+			MapList.Delete_By_Ref (map_name);
 			MapCycleList.Add (map_name);
 		}
 	}
@@ -1441,7 +1441,7 @@ MPLanHostMapCycleOptionsTabClass::Fill_Map_Ctrls (void)
 	//
 	if (MapCycleList.Count () == 0 && MapList.Count () > 0) {
 		MapCycleList.Add (MapList[0]);
-		MapList.Delete (0);
+		MapList.Delete_By_Index (0);
 	}
 
 	//

@@ -95,7 +95,7 @@ NetworkObjectMgrClass::Unregister_Object (NetworkObjectClass *object)
 			//
 			//	Remove the object from the list
 			//
-			_ObjectList.Delete (index);
+			_ObjectList.Delete_By_Index (index);
 		}
 	}
 
