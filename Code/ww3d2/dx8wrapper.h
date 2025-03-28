@@ -54,6 +54,7 @@
 #include "vector4.h"
 #include "cpudetect.h"
 #include "dx8caps.h"
+#include "render2d.h"
 
 #include "texture.h"
 #include "dx8vertexbuffer.h"
@@ -759,6 +760,7 @@ WWINLINE unsigned int DX8Wrapper::Convert_Color(const Vector4& color)
 
 WWINLINE unsigned int DX8Wrapper::Convert_Color(const Vector3& color,float alpha)
 {
+#ifdef USE_ASM
 	const float scale = 255.0;
 	unsigned int col;
 
@@ -827,6 +829,9 @@ not_changed:
 		mov	col,eax
 	}
 	return col;
+#else
+	return FRGBA_TO_INT32(color.X, color.Y, color.Z, alpha);
+#endif
 }
 
 // ----------------------------------------------------------------------------

@@ -120,6 +120,9 @@
 #define M_SQRT2     1.41421356237309504880
 #define M_SQRT_2    0.707106781186547524401
 
+#if _MSC_VER <= 1200
+#define USE_ASM
+#endif
 
 #endif
 
