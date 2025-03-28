@@ -121,7 +121,7 @@ void Set_Working_Directory(char *old_path, char *new_path);
 int Start_Application( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow );
 void Set_Working_Directory(HINSTANCE hInstance);
 
-#ifndef _MSC_VER
+#if !defined _MSC_VER || _MSC_VER > 1200
 long Top_Level_Exception_Filter(EXCEPTION_POINTERS *e_info)
 {
 	return(Exception_Handler(e_info->ExceptionRecord->ExceptionCode, e_info));
@@ -468,7 +468,7 @@ int Start_Application( HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /
 		Register_Application_Exception_Callback(&Application_Exception_Callback);
 		Register_Application_Version_Callback(&BuildInfoClass::Composite_Build_Info);
 
-#ifdef _MSC_VER
+#if defined _MSC_VER && _MSC_VER <= 1200
 		/*
 		** The __try/__except construct is part of the WIN32 interface. This is not the same
 		** as C++ exception handling. There is no additional code overhead required
@@ -482,7 +482,7 @@ int Start_Application( HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPSTR /
 			WWDEBUG_SAY(("Game_Main_Loop\n"));
 			exitCode = Game_Main_Loop();
 
-#ifdef _MSC_VER
+#if defined _MSC_VER && _MSC_VER <= 1200
 		} __except(Exception_Handler(GetExceptionCode(), GetExceptionInformation())) {};
 
 		/*
