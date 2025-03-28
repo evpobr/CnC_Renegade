@@ -237,10 +237,12 @@ template<typename Type> class RefPtr :
 			return *this;
 			}
 
+#if defined _MSC_VER && _MSC_VER <= 1200
 	private:
 		friend RefPtr<Type> Dynamic_Cast(RefPtrBase&);
 		friend RefPtr<Type> Reinterpret_Cast(RefPtrBase&);
 		friend RefPtr<Type> Const_Cast(RefPtrConst<Type>&);
+#endif
 	};
 
 

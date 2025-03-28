@@ -610,13 +610,13 @@ RefPtr<WaitCondition> Session::LoginServer(const RefPtr<IRCServerData>& server,
 	if (ConnectionDisconnecting == mCurrentConnectionStatus)
 		{
 		WWDEBUG_SAY(("WOL: LoginServer wait for disconnect to finish.\n"));
-		RefPtr< EventValueWait<ConnectionStatus> > finish = EventValueWait<ConnectionStatus>::CreateAndObserve(*this, ConnectionDisconnected, WOLSTRING("WOL_DISCONNECTING"));
+		const RefPtr< EventValueWait<ConnectionStatus> >& finish = EventValueWait<ConnectionStatus>::CreateAndObserve(*this, ConnectionDisconnected, WOLSTRING("WOL_DISCONNECTING"));
 		serverWait->Add(finish);
 		}
 	else if (ConnectionConnecting == mCurrentConnectionStatus)
 		{
 		WWDEBUG_SAY(("WOL: LoginServer wait for connect to finish.\n"));
-		RefPtr< EventValueWait<ConnectionStatus> > finish = EventValueWait<ConnectionStatus>::CreateAndObserve(*this, ConnectionConnected, WOLSTRING("WOL_DISCONNECTING"));
+		const RefPtr< EventValueWait<ConnectionStatus> >& finish = EventValueWait<ConnectionStatus>::CreateAndObserve(*this, ConnectionConnected, WOLSTRING("WOL_DISCONNECTING"));
 		serverWait->Add(finish);
 		}
 
@@ -629,7 +629,7 @@ RefPtr<WaitCondition> Session::LoginServer(const RefPtr<IRCServerData>& server,
 		if ((ConnectionConnected == mCurrentConnectionStatus) || (ConnectionConnecting == mCurrentConnectionStatus))
 			{
 			WWDEBUG_SAY(("WOL: LoginServer disconnect from current server.\n"));
-			RefPtr<DisconnectWait> disconnect = DisconnectWait::Create(this);
+			const RefPtr<DisconnectWait>& disconnect = DisconnectWait::Create(this);
 			serverWait->Add(disconnect);
 			}
 		}
@@ -652,7 +652,7 @@ RefPtr<WaitCondition> Session::LoginServer(const RefPtr<IRCServerData>& server,
 	// Finally, connect to desired server.  Request to connect is embedded in Wait_Beginning
 	WWDEBUG_SAY(("WOL: LoginServer connect to new server.\n"));
 
-	RefPtr<ConnectWait> connect = ConnectWait::Create(this, server, login);
+	const RefPtr<ConnectWait>& connect = ConnectWait::Create(this, server, login);
 	serverWait->Add(connect);
 
 	return serverWait;

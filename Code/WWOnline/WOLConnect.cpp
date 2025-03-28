@@ -1750,7 +1750,7 @@ void GetUserWait::WaitBeginning(void)
 	WWDEBUG_SAY(("WOL: GetUserWait Begin\n"));
 	WWASSERT(mSession.IsValid() && "GetUserWait");
 
-	RefPtr<UserData> user = mSession->FindUser(mUserName);
+	const RefPtr<UserData>& user = mSession->FindUser(mUserName);
 
 	if (user.IsValid())
 		{
@@ -1759,7 +1759,8 @@ void GetUserWait::WaitBeginning(void)
 		}
 	else
 		{
-		Add(UserListWait::Create(mSession));
+			const RefPtr<UserListWait> userList = UserListWait::Create(mSession);
+		Add(userList);
 		}
 	}
 
