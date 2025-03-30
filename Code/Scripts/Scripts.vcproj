@@ -47,6 +47,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="$(SolutionDir)WWMath"
 				PreprocessorDefinitions="_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NDEBUG;WINVER=0x400;_WINDOWS;WIN32;BUILDING_DLL"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -149,6 +150,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="$(SolutionDir)WWMath"
 				PreprocessorDefinitions="NDEBUG;WIN32_LEAN_AND_MEAN;_LIB;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32;BUILDING_DLL"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -247,6 +249,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="$(SolutionDir)WWMath"
 				PreprocessorDefinitions="_DEBUG;WWDEBUG;WINVER=0x400;_WINDOWS;WIN32;BUILDING_DLL"
 				MinimalRebuild="true"
 				RuntimeLibrary="1"
@@ -318,6 +321,10 @@
 		</Configuration>
 	</Configurations>
 	<References>
+		<ProjectReference
+			ReferencedProjectIdentifier="{6DDA51F5-6C88-4F42-ABA9-1685FEA74649}"
+			RelativePathToProject=".\WWMath\wwmath.vcproj"
+		/>
 	</References>
 	<Files>
 		<Filter
@@ -548,19 +555,7 @@
 				>
 			</File>
 			<File
-				RelativePath="vector.h"
-				>
-			</File>
-			<File
-				RelativePath="vector3.h"
-				>
-			</File>
-			<File
 				RelativePath="visualc.h"
-				>
-			</File>
-			<File
-				RelativePath="wwmath.h"
 				>
 			</File>
 		</Filter>
