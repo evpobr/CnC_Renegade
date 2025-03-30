@@ -515,14 +515,6 @@
 				>
 			</File>
 			<File
-				RelativePath="slist.h"
-				>
-			</File>
-			<File
-				RelativePath="slnode.h"
-				>
-			</File>
-			<File
 				RelativePath="strtrim.cpp"
 				>
 				<FileConfiguration
