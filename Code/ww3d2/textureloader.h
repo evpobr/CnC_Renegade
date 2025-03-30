@@ -142,7 +142,7 @@ class SynchronizedTextureLoadTaskListClass : public TextureLoadTaskListClass
 		void									Remove		(TextureLoadTaskClass *task);
 
 	private:
-		CriticalSectionClass		CriticalSection;
+		FastCriticalSectionClass		CriticalSection;
 };
 
 

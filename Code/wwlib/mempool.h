@@ -94,7 +94,7 @@ protected:
 	uint32 *	BlockListHead;			
 	int		FreeObjectCount;
 	int		TotalObjectCount;
-	CriticalSectionClass ObjectPoolCS;
+	FastCriticalSectionClass ObjectPoolCS;
 
 };
 
@@ -276,7 +276,7 @@ void ObjectPoolClass<T,BLOCK_SIZE>::Free_Object(T * obj)
 template<class T,int BLOCK_SIZE> 
 T * ObjectPoolClass<T,BLOCK_SIZE>::Allocate_Object_Memory(void)
 {
-	CriticalSectionClass::LockClass lock(ObjectPoolCS);
+	FastCriticalSectionClass::LockClass lock(ObjectPoolCS);
 
 	if ( FreeListHead == 0 ) {  
 
@@ -320,7 +320,7 @@ T * ObjectPoolClass<T,BLOCK_SIZE>::Allocate_Object_Memory(void)
 template<class T,int BLOCK_SIZE> 
 void ObjectPoolClass<T,BLOCK_SIZE>::Free_Object_Memory(T * obj)
 {
-	CriticalSectionClass::LockClass lock(ObjectPoolCS);
+	FastCriticalSectionClass::LockClass lock(ObjectPoolCS);
 
 	WWASSERT(obj != NULL);
 	*(T**)(obj) = FreeListHead;		// Link to the Head

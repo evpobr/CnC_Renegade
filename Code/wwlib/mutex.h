@@ -108,4 +108,67 @@ public:
 	friend class LockClass;
 };
 
+// ----------------------------------------------------------------------------
+//
+// Fast critical section is really fast version of CriticalSection. The downside
+// of it is that it can't be locked multiple times from the same thread.
+//
+// ----------------------------------------------------------------------------
+
+class FastCriticalSectionClass
+{
+	volatile unsigned Flag;
+
+	void Thread_Safe_Set_Flag()
+	{
+		volatile unsigned& nFlag=Flag;
+
+		#define ts_lock _emit 0xF0
+		assert(((unsigned)&nFlag % 4) == 0);
+
+		__asm mov ebx, [nFlag]
+		__asm ts_lock
+		__asm bts dword ptr [ebx], 0
+		__asm jc The_Bit_Was_Previously_Set_So_Try_Again
+		return;
+
+		The_Bit_Was_Previously_Set_So_Try_Again:
+		ThreadClass::Switch_Thread();
+		__asm mov ebx, [nFlag]
+		__asm ts_lock
+		__asm bts dword ptr [ebx], 0
+		__asm jc  The_Bit_Was_Previously_Set_So_Try_Again
+	}
+
+	WWINLINE void Thread_Safe_Clear_Flag()
+	{
+		Flag = 0;
+	}
+
+public:
+	// Name can (and usually should) be NULL. Use name only if you wish to create a globally unique mutex
+	FastCriticalSectionClass() : Flag(0) {}
+
+	class LockClass
+	{
+		FastCriticalSectionClass& CriticalSection;
+	public:
+		LockClass(FastCriticalSectionClass& critical_section) : CriticalSection(critical_section)
+		{
+			CriticalSection.Thread_Safe_Set_Flag();
+		}
+
+		~LockClass()
+		{
+			CriticalSection.Thread_Safe_Clear_Flag();
+		}
+	private:
+		LockClass &operator=(const LockClass&) { return(*this); }
+	};
+
+	friend class LockClass;
+};
+
+
+
 #endif
