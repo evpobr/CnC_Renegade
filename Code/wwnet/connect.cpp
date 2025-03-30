@@ -207,7 +207,7 @@ cConnection::~cConnection()
 #ifdef WWDEBUG
 	while (LaggedPackets.Count()) {
 		delete LaggedPackets[0];
-		LaggedPackets.Delete(0);
+		LaggedPackets.Delete_By_Index(0);
 	}
 	LaggedPacketTimes.Delete_All();
 #endif //WWDEBUG
@@ -612,10 +612,10 @@ bool cConnection::Receive_Packet()
 			if (LaggedPacketTimes[p] <= time_now) {
 				packet = *LaggedPackets[p];
 				delete LaggedPackets[p];
-				LaggedPackets.Delete(p);
-				LaggedPacketTimes.Delete(p);
+				LaggedPackets.Delete_By_Index(p);
+				LaggedPacketTimes.Delete_By_Index(p);
 				ret_code = LaggedPacketRetCodes[p];
-				LaggedPacketRetCodes.Delete(p);
+				LaggedPacketRetCodes.Delete_By_Index(p);
 				break;
 			}
 		}
