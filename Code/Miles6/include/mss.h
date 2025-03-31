@@ -255,8 +255,20 @@ extern "C" {
 #define STRICT
 #endif
 
+#if defined(_PUSHPOP_SUPPORTED) || PRAGMA_STRUCT_PACKPUSH
+  #pragma pack(pop)
+#else
+  #pragma pack()
+#endif
+
 #include <windows.h>
 #include <mmsystem.h>
+
+#if defined(_PUSHPOP_SUPPORTED) || PRAGMA_STRUCT_PACKPUSH
+  #pragma pack(push,1)
+#else
+  #pragma pack(1)
+#endif
 
 #define MSS_MAIN_DEF __cdecl
 

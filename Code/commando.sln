@@ -1,60 +1,53 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BandTest", "BandTest\BandTest.vcproj", "{3A6268D9-DE89-4792-97E3-9DDB89D8BEE3}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BandTest", "BandTest\BandTest.vcxproj", "{3A6268D9-DE89-4792-97E3-9DDB89D8BEE3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinkMovie", "BinkMovie\BinkMovie.vcproj", "{036BF597-FB2D-4CDD-AA2D-FDDD3F55A5DE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinkMovie", "BinkMovie\BinkMovie.vcxproj", "{036BF597-FB2D-4CDD-AA2D-FDDD3F55A5DE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Combat", "combat\Combat.vcproj", "{19F3E031-381C-4ADF-A83C-F1BF516EE77B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Combat", "Combat\Combat.vcxproj", "{19F3E031-381C-4ADF-A83C-F1BF516EE77B}"
 EndProject
 Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "GameSpy", "GameSpy\GameSpy.dsp", "{7616C18B-35C8-470E-9C1C-3F17842BCA49}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LevelEdit", "Tools\LevelEdit\LevelEdit.vcproj", "{2F3BC386-A175-49E7-A2C3-CD898EB3B87D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LevelEdit", "Tools\LevelEdit\LevelEdit.vcxproj", "{2F3BC386-A175-49E7-A2C3-CD898EB3B87D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SControl", "SControl\SControl.vcproj", "{B88FB9B2-6F53-4FC5-BE34-9783E02AD419}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SControl", "SControl\SControl.vcxproj", "{B88FB9B2-6F53-4FC5-BE34-9783E02AD419}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scripts", "Scripts\Scripts.vcproj", "{E167A697-2D50-488C-8329-7956A9C6E22E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scripts", "Scripts\Scripts.vcxproj", "{E167A697-2D50-488C-8329-7956A9C6E22E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWAudio", "WWAudio\WWAudio.vcproj", "{016598B6-8690-4D50-81FF-157D00B623FA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWAudio", "WWAudio\WWAudio.vcxproj", "{016598B6-8690-4D50-81FF-157D00B623FA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWConfig", "Tools\WWConfig\WWConfig.vcproj", "{07F14FD6-F16E-46E7-B966-3F6DC86D5A23}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWConfig", "Tools\WWConfig\WWConfig.vcxproj", "{07F14FD6-F16E-46E7-B966-3F6DC86D5A23}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWCtrl", "Tools\WWCtrl\WWCtrl.vcproj", "{3D5AADCD-EF23-4692-8CAF-D66F5B72274C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WWCtrl", "Tools\WWCtrl\WWCtrl.vcxproj", "{3D5AADCD-EF23-4692-8CAF-D66F5B72274C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "commando", "Commando\commando.vcproj", "{6A0E39D6-BDD5-4534-8A3F-B511201B2CE3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{E167A697-2D50-488C-8329-7956A9C6E22E} = {E167A697-2D50-488C-8329-7956A9C6E22E}
-		{016598B6-8690-4D50-81FF-157D00B623FA} = {016598B6-8690-4D50-81FF-157D00B623FA}
-		{19F3E031-381C-4ADF-A83C-F1BF516EE77B} = {19F3E031-381C-4ADF-A83C-F1BF516EE77B}
-		{036BF597-FB2D-4CDD-AA2D-FDDD3F55A5DE} = {036BF597-FB2D-4CDD-AA2D-FDDD3F55A5DE}
-		{3A6268D9-DE89-4792-97E3-9DDB89D8BEE3} = {3A6268D9-DE89-4792-97E3-9DDB89D8BEE3}
-		{B88FB9B2-6F53-4FC5-BE34-9783E02AD419} = {B88FB9B2-6F53-4FC5-BE34-9783E02AD419}
-		{7616C18B-35C8-470E-9C1C-3F17842BCA49} = {7616C18B-35C8-470E-9C1C-3F17842BCA49}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renegade", "Commando\commando.vcxproj", "{6A0E39D6-BDD5-4534-8A3F-B511201B2CE3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "max2w3d", "Tools\max2w3d\max2w3d.vcproj", "{775D24E8-5B79-4C8A-AD9D-873E2B7CD441}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "max2w3d", "Tools\max2w3d\max2w3d.vcxproj", "{775D24E8-5B79-4C8A-AD9D-873E2B7CD441}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ww3d2", "ww3d2\ww3d2.vcproj", "{BFE981D3-7F4D-4339-BC6C-C0BC3BEC2F99}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ww3d2", "ww3d2\ww3d2.vcxproj", "{BFE981D3-7F4D-4339-BC6C-C0BC3BEC2F99}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwbitpack", "wwbitpack\wwbitpack.vcproj", "{8FB332B5-C987-429A-849A-175649A040FA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwbitpack", "wwbitpack\wwbitpack.vcxproj", "{8FB332B5-C987-429A-849A-175649A040FA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwdebug", "wwdebug\wwdebug.vcproj", "{6C6C0E06-E697-4BA0-97BB-1A3E3E93D515}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwdebug", "wwdebug\wwdebug.vcxproj", "{6C6C0E06-E697-4BA0-97BB-1A3E3E93D515}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwlib", "wwlib\wwlib.vcproj", "{425467FE-F137-4027-92CE-622B585FAF5F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwlib", "wwlib\wwlib.vcxproj", "{425467FE-F137-4027-92CE-622B585FAF5F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwmath", "WWMath\wwmath.vcproj", "{6DDA51F5-6C88-4F42-ABA9-1685FEA74649}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwmath", "WWMath\wwmath.vcxproj", "{6DDA51F5-6C88-4F42-ABA9-1685FEA74649}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwnet", "wwnet\wwnet.vcproj", "{1D33171C-AFAE-478A-9C9A-B314F9CCCA8B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwnet", "wwnet\wwnet.vcxproj", "{1D33171C-AFAE-478A-9C9A-B314F9CCCA8B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwphys", "wwphys\wwphys.vcproj", "{ADE50808-214E-4C7C-8851-60519FA190DF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwphys", "wwphys\wwphys.vcxproj", "{ADE50808-214E-4C7C-8851-60519FA190DF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwsaveload", "wwsaveload\wwsaveload.vcproj", "{ADD92C64-52D2-4D83-8435-57288F16980D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwsaveload", "wwsaveload\wwsaveload.vcxproj", "{ADD92C64-52D2-4D83-8435-57288F16980D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwtranslatedb", "wwtranslatedb\wwtranslatedb.vcproj", "{46884A64-7191-412A-BD28-C20ACC59B64A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwtranslatedb", "wwtranslatedb\wwtranslatedb.vcxproj", "{46884A64-7191-412A-BD28-C20ACC59B64A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwui", "wwui\wwui.vcproj", "{4AF841DE-5DF4-4E3D-A6F3-98646AD396A9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwui", "wwui\wwui.vcxproj", "{4AF841DE-5DF4-4E3D-A6F3-98646AD396A9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwutil", "wwutil\wwutil.vcproj", "{C7F15F81-1C39-4C27-8366-D6A1D534A845}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wwutil", "wwutil\wwutil.vcxproj", "{C7F15F81-1C39-4C27-8366-D6A1D534A845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -558,5 +551,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA6642FE-1FA1-4009-906C-370AD4AE0AFE}
 	EndGlobalSection
 EndGlobal

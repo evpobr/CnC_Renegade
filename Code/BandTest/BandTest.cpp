@@ -782,9 +782,9 @@ unsigned long Upstream_Detect(unsigned long server_ip, unsigned long my_ip, int 
 	** If the bandwidth in the registry is close to what we just calculated then use the old downstream calculation from the
 	** registry.
 	*/
-	unsigned long downstream_bandwidth = upstream_bandwidth;
-	int old_band = Get_Registry_Int("Up", 0);
-	unsigned long diff = abs(upstream_bandwidth - old_band);
+	long long downstream_bandwidth = upstream_bandwidth;
+	long long old_band = Get_Registry_Int("Up", 0);
+	long long diff = abs(upstream_bandwidth - old_band);
 	bool calc_down = true;
 	if (diff < upstream_bandwidth / 10) {
 		downstream_bandwidth = Get_Registry_Int("Down", upstream_bandwidth);
