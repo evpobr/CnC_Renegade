@@ -15,7 +15,7 @@
 	<Configurations>
 		<Configuration
 			Name="Profile|Win32"
-			OutputDirectory="..\Libs\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -47,10 +47,6 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Profile/SControl.pch"
-				AssemblerListingLocation=".\Profile/"
-				ObjectFile=".\Profile/"
-				ProgramDataBaseFileName=".\Profile/"
 				WarningLevel="4"
 				WarnAsError="true"
 				SuppressStartupBanner="true"
@@ -79,7 +75,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/SControl.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -90,7 +85,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\Libs\$(ConfigurationName)"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
@@ -123,10 +118,6 @@
 				RuntimeLibrary="1"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Debug/SControl.pch"
-				AssemblerListingLocation=".\Debug/"
-				ObjectFile=".\Debug/"
-				ProgramDataBaseFileName=".\Debug/"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -156,7 +147,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/SControl.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -201,10 +191,6 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Release/SControl.pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -233,7 +219,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/SControl.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

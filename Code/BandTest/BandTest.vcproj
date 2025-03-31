@@ -54,10 +54,6 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Release/BandTest.pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -94,7 +90,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/BandTest.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -107,7 +102,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy Release\BandTest.lib ..\libs\Release\BandTest.lib"
+				CommandLine=""
 			/>
 		</Configuration>
 		<Configuration
@@ -149,10 +144,6 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Profile/BandTest.pch"
-				AssemblerListingLocation=".\Profile/"
-				ObjectFile=".\Profile/"
-				ProgramDataBaseFileName=".\Profile/"
 				BrowseInformation="1"
 				WarningLevel="4"
 				SuppressStartupBanner="true"
@@ -172,7 +163,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ws2_32.lib winmm.lib"
-				OutputFile="$(OutDir)\$(ProjectName)P.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
@@ -191,7 +181,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/BandTest.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -204,7 +193,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy Profile\BandTest.lib ..\libs\Profile\BandTest.lib"
+				CommandLine=""
 			/>
 		</Configuration>
 		<Configuration
@@ -247,10 +236,6 @@
 				RuntimeLibrary="1"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Debug/BandTest.pch"
-				AssemblerListingLocation=".\Debug/"
-				ObjectFile=".\Debug/"
-				ProgramDataBaseFileName=".\Debug/"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -270,7 +255,6 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ws2_32.lib winmm.lib"
-				OutputFile="$(OutDir)\$(ProjectName)D.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
@@ -289,7 +273,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/BandTest.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -302,7 +285,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy Debug\BandTest.lib ..\libs\Debug\BandTest.lib"
+				CommandLine=""
 			/>
 		</Configuration>
 	</Configurations>

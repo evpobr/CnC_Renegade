@@ -55,12 +55,6 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Release/commando.pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
-				BrowseInformation="2"
-				BrowseInformationFile=".\Release/"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -84,10 +78,6 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../libs/release,../srsdk1x/msvc6\lib\release,../directx\lib,../umbra/lib/win32-x86"
 				IgnoreDefaultLibraryNames="libci"
-				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\Renegade.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\Renegade.map"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -103,7 +93,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/commando.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -116,7 +105,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="rebase -v -x ..\..\Run\. -a -b 400000 ..\..\Run\Renegade.exe"
+				CommandLine=""
 			/>
 		</Configuration>
 		<Configuration
@@ -160,10 +149,6 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Profile/commando.pch"
-				AssemblerListingLocation=".\Profile/"
-				ObjectFile=".\Profile/"
-				ProgramDataBaseFileName=".\Profile/"
 				BrowseInformation="2"
 				BrowseInformationFile=".\Profile/"
 				WarningLevel="4"
@@ -188,9 +173,6 @@
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories="../libs/profile,../srsdk1x/msvc6/lib/release,../directx\lib,../umbra/lib/win32-x86"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\RenegadeP.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\RenegadeP.map"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -206,7 +188,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/commando.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -259,10 +240,6 @@
 				RuntimeLibrary="1"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Debug/commando.pch"
-				AssemblerListingLocation=".\Debug/"
-				ObjectFile=".\Debug/"
-				ProgramDataBaseFileName=".\Debug/"
 				BrowseInformation="1"
 				BrowseInformationFile=".\Debug/"
 				WarningLevel="4"
@@ -289,9 +266,6 @@
 				AdditionalLibraryDirectories="../libs/debug,../srsdk1x/msvc6\lib\debug,../directx\lib,../umbra/lib/win32-x86"
 				IgnoreDefaultLibraryNames="libci"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\RenegadeD.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\RenegadeD.map"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -307,7 +281,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile="Debug/renegade.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"

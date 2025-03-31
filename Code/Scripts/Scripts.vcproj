@@ -54,10 +54,6 @@
 				EnableFunctionLevelLinking="true"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Release/Scripts.pch"
-				AssemblerListingLocation=".\Release/"
-				ObjectFile=".\Release/"
-				ProgramDataBaseFileName=".\Release/"
 				BrowseInformation="1"
 				WarningLevel="4"
 				WarnAsError="false"
@@ -80,11 +76,7 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\Scripts.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\Scripts.map"
 				SubSystem="2"
-				ImportLibrary=".\Release/Scripts.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -99,7 +91,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/Scripts.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -155,10 +146,6 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Profile/Scripts.pch"
-				AssemblerListingLocation=".\Profile/"
-				ObjectFile=".\Profile/"
-				ProgramDataBaseFileName=".\Profile/"
 				WarningLevel="4"
 				WarnAsError="true"
 				SuppressStartupBanner="true"
@@ -177,15 +164,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\$(ProjectName)P.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\ScriptsP.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\ScriptsP.map"
 				SubSystem="2"
-				ImportLibrary="Profile/Scripts.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -200,7 +182,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Profile/Scripts.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -255,12 +236,7 @@
 				RuntimeLibrary="1"
 				TreatWChar_tAsBuiltInType="false"
 				ForceConformanceInForLoopScope="false"
-				PrecompiledHeaderFile=".\Debug/Scripts.pch"
-				AssemblerListingLocation=".\Debug/"
-				ObjectFile=".\Debug/"
-				ProgramDataBaseFileName=".\Debug/"
-				BrowseInformation="2"
-				BrowseInformationFile=".\Debug/"
+				BrowseInformation="1"
 				WarningLevel="4"
 				WarnAsError="false"
 				SuppressStartupBanner="true"
@@ -279,16 +255,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\$(ProjectName)D.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="..\..\run\Debug"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="..\..\Run\ScriptsD.pdb"
-				GenerateMapFile="true"
-				MapFileName="..\..\Run\ScriptsD.map"
 				SubSystem="2"
-				ImportLibrary="Debug/Scripts.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -303,7 +274,6 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/Scripts.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
