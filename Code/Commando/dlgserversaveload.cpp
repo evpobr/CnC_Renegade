@@ -628,7 +628,7 @@ void ServerSaveLoadMenuClass::Save_Now(void)
  * HISTORY:                                                                                    *
  *   12/17/2001 5:11PM ST : Created                                                            *
  *=============================================================================================*/
-ServerSettingsClass::ServerSettingsClass(char *filename, unsigned short *configname, int file_number)
+ServerSettingsClass::ServerSettingsClass(char *filename, const wchar_t *configname, int file_number)
 {
 	ConfigName = configname;	//"Default C&C Server Settings";
 	RawFileName = filename;		//"svrcfg_cnc.ini"
@@ -712,13 +712,13 @@ void ServerSettingsManagerClass::Scan(void)
 	/*
 	** Add in the default as the first entry.
 	*/
-	ServerSettingsList.Add(new ServerSettingsClass("def_svrcfg_cnc.ini", (unsigned short *)TRANSLATE(IDS_SERVER_SAVELOAD_DEFAULT), 0));
+	ServerSettingsList.Add(new ServerSettingsClass("def_svrcfg_cnc.ini", TRANSLATE(IDS_SERVER_SAVELOAD_DEFAULT), 0));
 	ServerSettingsList[0]->IsCustom = false;
 
 	/*
 	** Add in the custom default as the second entry.
 	*/
-	ServerSettingsList.Add(new ServerSettingsClass("svrcfg_cnc.ini", (unsigned short *)TRANSLATE(IDS_SERVER_SAVELOAD_CUSTOM_DEFAULT), 1));
+	ServerSettingsList.Add(new ServerSettingsClass("svrcfg_cnc.ini", TRANSLATE(IDS_SERVER_SAVELOAD_CUSTOM_DEFAULT), 1));
 	ServerSettingsList[1]->IsCustom = true;
 
 	for (int i=2 ; i<MAX_SETTINGS_FILES ; i++) {
