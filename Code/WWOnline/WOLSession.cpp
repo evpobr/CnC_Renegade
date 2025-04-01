@@ -2081,7 +2081,8 @@ void Session::MakeSquadRequests(void)
 		unsigned int count = min<unsigned int>(10, mSquadRequests.size());
 
 		// Send each request in turn,
-		for (unsigned int index = 0; index < count; ++index)
+		unsigned int index;
+		for (index = 0; index < count; ++index)
 			{
 			const WideStringClass& request = mSquadRequests[index];
 

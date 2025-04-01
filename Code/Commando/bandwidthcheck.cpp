@@ -265,7 +265,7 @@ const char *BandwidthCheckerClass::Get_Ping_Server_Name(void)
 			int closest_index = -1;
 			int closest_diff = 0x7fffffff;
 
-			for (i=0 ; i<list.Count() ; i++) {
+			for (int i=0 ; i<list.Count() ; i++) {
 				int time = reg.Get_Int(list[i].Peek_Buffer(), 0);
 				if (time > 0 && time < 0xffff) {
 					int diff = abs(time - average_time);
@@ -775,7 +775,7 @@ BandwidthCheckerClass::PackedBandwidthType BandwidthCheckerClass::Get_Packed_Ban
 			}
 		}
 
-		for (i=0 ; i<NUM_BANDS+1 ; i++) {
+		for (int i=0 ; i<NUM_BANDS+1 ; i++) {
 			if (bwd <= Bandwidths[(i*2)+1]) {
 				bandwidth.Bandwidth.Down = i;
 				break;

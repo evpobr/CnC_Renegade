@@ -1774,7 +1774,7 @@ void ChatObserver::Kick_Spammer(WOL::User *wol_user)
 	/*
 	** Ban em, ban em all.
 	*/
-	for (index = 0; index < count; index++) {
+	for (int index = 0; index < count; index++) {
 		const RefPtr<UserData>& user = user_list[index];
 		if (user.IsValid()) {
 			WOL::User userdata = user->GetData();

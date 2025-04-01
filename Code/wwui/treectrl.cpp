@@ -1124,7 +1124,7 @@ TreeCtrlClass::Delete_Item (TreeItemClass *item)
 		//
 		//	Remove this item from the root list
 		//
-		index = ItemList.ID (item);
+		int index = ItemList.ID (item);
 		if (index != -1) {
 			ItemList.Delete_By_Index (index);
 		}
