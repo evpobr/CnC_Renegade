@@ -161,12 +161,12 @@ inline RayCollisionTestClass::RayCollisionTestClass(const RayCollisionTestClass 
 		
 inline bool RayCollisionTestClass::Cull(const Vector3 & min,const Vector3 & max) 
 { 
-	return (CollisionMath::Overlap_Test(min,max,Ray) == CollisionMath::POS);
+	return (CollisionMath::Overlap_Test(min,max,Ray) & CollisionMath::POS);
 }
 
 inline bool RayCollisionTestClass::Cull(const AABoxClass & box) 
 { 
-	return (CollisionMath::Overlap_Test(box,Ray) == CollisionMath::POS);
+	return (CollisionMath::Overlap_Test(box,Ray) & CollisionMath::POS);
 }
 
 inline bool RayCollisionTestClass::Cast_To_Triangle(const TriClass & tri) 

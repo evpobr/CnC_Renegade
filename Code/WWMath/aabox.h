@@ -458,7 +458,7 @@ WWINLINE float AABoxClass::Project_To_Axis(const Vector3 & axis) const
  *=============================================================================================*/
 WWINLINE bool AABoxClass::Contains(const AABoxClass & other_box) const
 {
-	return CollisionMath::Overlap_Test(*this,other_box) == CollisionMath::INSIDE;
+	return CollisionMath::Overlap_Test(*this,other_box) & CollisionMath::INSIDE;
 }
 
 /***********************************************************************************************
@@ -503,7 +503,7 @@ WWINLINE bool AABoxClass::Contains(const MinMaxAABoxClass & other_box) const
  *=============================================================================================*/
 WWINLINE bool AABoxClass::Contains(const Vector3 & point) const
 {
-	return CollisionMath::Overlap_Test(*this,point) == CollisionMath::INSIDE;
+	return CollisionMath::Overlap_Test(*this,point) & CollisionMath::INSIDE;
 }
 
 /***********************************************************************************************

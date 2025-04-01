@@ -438,11 +438,11 @@ void LoginProfile::SetLocale(WOL::Locale locale)
 
 const LoginProfile::Ranking* LoginProfile::GetRanking(LadderType type) const
 	{
-	if (type == LadderType_Team)
+	if (type & LadderType_Team)
 		{
 		return &mTeamRank;
 		}
-	else if (type == LadderType_Clan)
+	else if (type & LadderType_Clan)
 		{
 		return &mClanRank;
 		}
@@ -470,11 +470,11 @@ const LoginProfile::Ranking* LoginProfile::GetRanking(LadderType type) const
 
 void LoginProfile::SetRanking(WWOnline::LadderType type, Ranking& rank)
 	{
-	if (type == LadderType_Team)
+	if (type & LadderType_Team)
 		{
 		memcpy(&mTeamRank, &rank, sizeof(Ranking));
 		}
-	else if (type == LadderType_Clan)
+	else if (type & LadderType_Clan)
 		{
 		memcpy(&mClanRank, &rank, sizeof(Ranking));
 		}
