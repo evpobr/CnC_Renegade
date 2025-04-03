@@ -52,11 +52,12 @@
 #include "mapper.h"
 #include "wwstring.h"
 
+#include <d3d9types.h>
+
 #include <string.h>
 
 class ChunkLoadClass;
 class ChunkSaveClass;
-struct _D3DMATERIAL8;
 
 /**
 ** VertexMaterialClass
@@ -236,7 +237,7 @@ protected:
 
 	// We're using the pointer instead of the actual structure
 	// so we don't have to include the d3d header - HY
-	_D3DMATERIAL8 *		Material;
+	D3DMATERIAL9 *		Material;
 	unsigned int			Flags;
 	unsigned int			AmbientColorSource;
 	unsigned int			EmissiveColorSource;
